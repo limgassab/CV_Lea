@@ -7,14 +7,14 @@
   <meta name="description" content="Research portfolio of Lea Gassab, postdoctoral researcher in quantum neurobiology, quantum biology, and molecular biophysics." />
   <style>
     :root {
-      --bg: #f5f8fc;
+      --bg: #f4f8f8;
       --surface: #ffffff;
-      --surface-soft: #f8fbff;
-      --text: #162231;
-      --muted: #5f6e7f;
-      --line: #d6e1ec;
-      --accent: #1c6fb8;
-      --accent-soft: #e9f2fb;
+      --surface-soft: #f7fbfb;
+      --text: #17232d;
+      --muted: #5c6b73;
+      --line: #d8e4e4;
+      --accent: #0f7780;
+      --accent-soft: #e8f4f4;
       --max: 1180px;
       --radius: 18px;
       --shadow: 0 12px 30px rgba(17, 40, 66, 0.08);
@@ -26,7 +26,7 @@
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
-      background: linear-gradient(180deg, #f8fbff 0%, #f5f8fc 100%);
+      background: linear-gradient(180deg, #f8fbfb 0%, #f3f7f7 100%);
       line-height: 1.6;
     }
 
@@ -176,7 +176,7 @@
 
     .hero-side {
       padding: 1.4rem;
-      background: linear-gradient(180deg, #fbfdff 0%, #f4f8fc 100%);
+      background: linear-gradient(180deg, #fbfefe 0%, #f2f7f7 100%);
       border-left: 1px solid var(--line);
       display: grid;
       gap: 0.9rem;
@@ -286,6 +286,12 @@
       gap: 1rem;
     }
 
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
     .thumb-card {
       padding: 0;
       overflow: hidden;
@@ -345,7 +351,8 @@
     @media (max-width: 960px) {
       .hero-card,
       .two-col,
-      .three-col {
+      .three-col,
+      .experience-grid {
         grid-template-columns: 1fr;
       }
 
@@ -377,11 +384,13 @@
       <div class="brand">Lea Gassab</div>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#about">About</a>
+        <a href="#experience">Experience</a>
         <a href="#publications">Publications</a>
         <a href="#presentations">Presentations</a>
         <a href="#posters">Posters</a>
         <a href="#service">Service</a>
         <a href="#broader">Broader profile</a>
+        <a href="#media">Media</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -473,12 +482,16 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
+    <section id="experience">
+      <div class="container">
         <div class="card panel">
           <div class="section-head">
             <h2>Research and professional experience</h2>
           </div>
-          <div class="timeline">
+          <div class="experience-grid">
             <div class="item">
               <div class="item-meta">2025 to 2027</div>
               <h3>Provost Postdoctoral Scholar, University of Waterloo</h3>
@@ -503,6 +516,11 @@
               <div class="item-meta">2017</div>
               <h3>Research Intern, Quantum Optics, CNRS LPL</h3>
               <p class="muted">Worked on a MOPA laser system for chromium atom cooling.</p>
+            </div>
+            <div class="item">
+              <div class="item-meta">Additional experience</div>
+              <h3>Interdisciplinary mentoring, proposal development, and experimental preparation</h3>
+              <p class="muted">Contributed across theory, computation, student mentoring, experimental planning, and scientific communication.</p>
             </div>
           </div>
         </div>
@@ -682,14 +700,14 @@
       <div class="container">
         <div class="section-head">
           <h2>Broader profile</h2>
-          <p class="small">A fuller picture of leadership, outreach, international experience, athletics, and public facing work beyond the publication list.</p>
+          <p class="small">Leadership, outreach, international experience, athletics, creative work, and public facing projects.</p>
         </div>
         <div class="three-col">
           <div class="card panel">
             <h3>Community and outreach</h3>
             <div class="stack">
-              <div class="item"><strong>Science communication</strong><div class="small">Organized quantum themed public engagement events and science fairs for students and the general public.</div></div>
-              <div class="item"><strong>Volunteer teaching</strong><div class="small">Taught French to a refugee in Lyon and taught English to children at Hasantar Monastery.</div></div>
+              <div class="item"><strong>Science communication</strong><div class="small">Organized quantum themed public engagement events and science fairs for students and the general public, including activities at Notre Dame de Sion and Koç University.</div></div>
+              <div class="item"><strong>Volunteer teaching</strong><div class="small">Taught French to a refugee in Lyon, taught English to children at Hasantar Monastery, and supported learners through tutoring and mentoring.</div></div>
               <div class="item"><strong>Environmental action</strong><div class="small">Helped organize youth led cleanup activities in South Africa in collaboration with local environmental initiatives.</div></div>
             </div>
           </div>
@@ -698,18 +716,31 @@
             <h3>International experience and leadership</h3>
             <div class="stack">
               <div class="item"><strong>International perspective</strong><div class="small">Academic, research, mentoring, and outreach experience across Canada, France, Türkiye, South Africa, and other international settings.</div></div>
-              <div class="item"><strong>Travel and organization</strong><div class="small">Led travel and logistics activities across several countries including Nepal, New Zealand, Argentina, Chile, Peru, Bolivia, and Tunisia.</div></div>
-              <div class="item"><strong>Early leadership</strong><div class="small">Organized hiking and community activities for students from underrepresented backgrounds.</div></div>
+              <div class="item"><strong>Travel and organization</strong><div class="small">Led travel and logistics activities across Nepal, New Zealand, Argentina, Chile, Peru, Bolivia, and Tunisia, with extensive international travel experience beyond academia.</div></div>
+              <div class="item"><strong>Early leadership</strong><div class="small">Organized hiking and community activities for students from underrepresented backgrounds and remained involved in mentoring and support.</div></div>
             </div>
           </div>
 
           <div class="card panel">
             <h3>Athletics and digital projects</h3>
             <div class="stack">
-              <div class="item"><strong>Karate</strong><div class="small">Black belt, second Dan, with national level competition experience in France.</div></div>
-              <div class="item"><strong>Endurance sports</strong><div class="small">Ultra trail runner with competitive placements including under 23 category results.</div></div>
+              <div class="item"><strong>Karate and athletics</strong><div class="small">Black belt, second Dan, with national level competition experience in France, together with ultra trail running and competitive placements in under 23 categories.</div></div>
+              <div class="item"><strong>Artistic and design contributions</strong><div class="small">Participated in Science Exposed 2026 and designed the Quantum Neurobiology Lab logo in Inkscape.</div></div>
               <div class="item"><strong>Awareness App</strong><div class="small">Public facing web project exploring awareness related ideas.</div><div class="link-row"><a class="btn" href="https://limgassab.github.io/awareness_app/" target="_blank" rel="noreferrer">Open Awareness App</a></div></div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="media">
+      <div class="container">
+        <div class="card panel">
+          <div class="section-head"><h2>Media and public links</h2></div>
+          <div class="link-row">
+            <a class="btn" href="https://uwaterloo.ca/postdoctoral-scholars/blog/lea-gassab" target="_blank" rel="noreferrer">University of Waterloo profile</a>
+            <a class="btn" href="https://www.youtube.com/watch?v=mBG1qmMZ4ck" target="_blank" rel="noreferrer">YouTube video 1</a>
+            <a class="btn" href="https://www.youtube.com/watch?v=rm0elcdHqyw" target="_blank" rel="noreferrer">YouTube video 2</a>
           </div>
         </div>
       </div>
@@ -734,7 +765,7 @@
 
   <footer>
     <div class="container">
-      This page is designed as a professional recruiter and collaborator facing profile. You can still refine wording, add a CV download, or rename image files later if desired.
+      Lea Gassab | Quantum biology, molecular biophysics, and interdisciplinary research
     </div>
   </footer>
 </body>
