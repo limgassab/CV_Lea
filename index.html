@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lea Gassab | Quantum Neurobiology</title>
-  <meta name="description" content="Portfolio website for Lea Gassab, postdoctoral researcher in quantum neurobiology, quantum biology, and molecular biophysics." />
+  <title>Lea Gassab | Research Portfolio</title>
+  <meta name="description" content="Research portfolio of Lea Gassab, postdoctoral researcher in quantum neurobiology, quantum biology, and molecular biophysics." />
   <style>
     :root {
       --bg: #f5f8fc;
       --surface: #ffffff;
-      --surface-2: #f8fbff;
-      --text: #16202b;
-      --muted: #5d6a79;
-      --line: #d7e1ec;
+      --surface-soft: #f8fbff;
+      --text: #162231;
+      --muted: #5f6e7f;
+      --line: #d6e1ec;
       --accent: #1c6fb8;
-      --accent-2: #0f4f87;
-      --accent-soft: #eaf3fb;
+      --accent-soft: #e9f2fb;
       --max: 1180px;
-      --shadow: 0 10px 30px rgba(16, 38, 63, 0.08);
       --radius: 18px;
+      --shadow: 0 12px 30px rgba(17, 40, 66, 0.08);
     }
 
     * { box-sizing: border-box; }
@@ -56,7 +55,7 @@
       z-index: 50;
       background: rgba(245, 248, 252, 0.94);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(215, 225, 236, 0.85);
+      border-bottom: 1px solid rgba(214, 225, 236, 0.85);
     }
 
     .nav {
@@ -69,9 +68,9 @@
 
     .brand {
       font-weight: 800;
-      color: var(--text);
+      font-size: 1.04rem;
       letter-spacing: 0.01em;
-      font-size: 1.05rem;
+      color: var(--text);
     }
 
     .nav-links {
@@ -83,41 +82,38 @@
 
     .nav-links a {
       color: var(--muted);
-      font-size: 0.96rem;
       font-weight: 600;
+      font-size: 0.95rem;
     }
 
     .hero {
-      padding: 4.4rem 0 2.6rem;
+      padding: 3rem 0 1.5rem;
     }
 
-    .hero-grid {
+    .hero-card {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 1.3rem;
-      align-items: stretch;
-    }
-
-    .card {
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.2rem;
       background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: 22px;
       box-shadow: var(--shadow);
+      overflow: hidden;
     }
 
     .hero-main {
-      padding: 2rem;
+      padding: 1.8rem;
     }
 
     .eyebrow {
       display: inline-block;
       background: var(--accent-soft);
       color: var(--accent);
-      padding: 0.38rem 0.78rem;
       border-radius: 999px;
-      font-size: 0.86rem;
+      padding: 0.38rem 0.78rem;
       font-weight: 700;
-      margin-bottom: 1rem;
+      font-size: 0.86rem;
+      margin-bottom: 0.95rem;
     }
 
     h1, h2, h3 {
@@ -126,42 +122,50 @@
     }
 
     h1 {
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-size: clamp(2rem, 3vw, 2.9rem);
       letter-spacing: -0.02em;
     }
 
     h2 {
-      font-size: clamp(1.45rem, 2.2vw, 2rem);
+      font-size: clamp(1.35rem, 2vw, 1.9rem);
     }
 
     h3 {
-      font-size: 1.08rem;
+      font-size: 1.05rem;
+    }
+
+    .subtitle {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.9rem;
     }
 
     .lead {
       color: var(--muted);
-      font-size: 1.08rem;
+      font-size: 1.03rem;
       max-width: 68ch;
     }
 
     .cta-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 1.35rem;
+      gap: 0.75rem;
+      margin-top: 1.1rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 44px;
-      padding: 0.82rem 1.16rem;
+      min-height: 42px;
+      padding: 0.78rem 1rem;
       border-radius: 999px;
-      font-weight: 700;
       border: 1px solid var(--line);
-      color: var(--text);
       background: #fff;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.95rem;
     }
 
     .btn.primary {
@@ -171,31 +175,40 @@
     }
 
     .hero-side {
-      padding: 1.5rem;
+      padding: 1.4rem;
+      background: linear-gradient(180deg, #fbfdff 0%, #f4f8fc 100%);
+      border-left: 1px solid var(--line);
       display: grid;
-      gap: 1rem;
+      gap: 0.9rem;
       align-content: start;
     }
 
-    .stat {
-      padding: 1rem 1.1rem;
+    .hero-info {
+      padding: 0.95rem 1rem;
       border: 1px solid var(--line);
       border-radius: 14px;
-      background: var(--surface-2);
+      background: rgba(255,255,255,0.9);
     }
 
-    .stat strong {
+    .hero-info strong {
       display: block;
-      font-size: 1.55rem;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.2rem;
+      font-size: 1rem;
     }
 
     section {
-      padding: 1rem 0 2rem;
+      padding: 1rem 0 1.7rem;
     }
 
     .section-head {
       margin-bottom: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
     .panel {
@@ -221,23 +234,26 @@
     }
 
     .chip {
-      padding: 0.46rem 0.74rem;
+      padding: 0.45rem 0.72rem;
       border-radius: 999px;
       background: #f2f7fc;
       border: 1px solid var(--line);
-      color: #274157;
+      color: #284156;
       font-size: 0.92rem;
     }
 
     .timeline,
-    .pub-list,
-    .list-grid {
+    .stack,
+    .publication-list,
+    .presentation-list {
       display: grid;
-      gap: 1rem;
+      gap: 0.9rem;
     }
 
     .item,
-    .pub {
+    .pub,
+    .presentation,
+    .thumb-card {
       padding: 1rem 1.05rem;
       border: 1px solid var(--line);
       border-radius: 14px;
@@ -245,91 +261,112 @@
     }
 
     .item-meta,
-    .small {
+    .small,
+    .muted {
       color: var(--muted);
       font-size: 0.94rem;
     }
 
-    ul.clean {
-      margin: 0.4rem 0 0;
-      padding-left: 1.2rem;
-    }
-
-    ul.clean li + li {
-      margin-top: 0.42rem;
-    }
-
-    .pub-title {
+    .pub-title,
+    .presentation-title {
       font-weight: 700;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.3rem;
     }
 
-    .featured-gallery {
+    .doi-link {
+      display: inline-block;
+      margin-top: 0.35rem;
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+
+    .poster-grid {
       display: grid;
-      grid-template-columns: 1.15fr 1fr;
+      grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
-      margin-top: 1rem;
     }
 
-    .poster-card {
+    .thumb-card {
+      padding: 0;
       overflow: hidden;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: #fff;
       box-shadow: var(--shadow);
     }
 
-    .poster-card img {
+    .thumb-link {
+      display: block;
+      background: #f8fbff;
+    }
+
+    .thumb-image-wrap {
+      height: 420px;
+      padding: 0.8rem;
+      background: #f8fbff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .thumb-image-wrap img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      background: #eef4fa;
+      object-fit: contain;
+      border-radius: 10px;
+      background: #fff;
     }
 
-    .poster-info {
-      padding: 1rem 1.05rem;
-      border-top: 1px solid var(--line);
+    .thumb-info {
+      padding: 0.95rem 1rem 1rem;
     }
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
+    .thumb-info p {
+      margin: 0.35rem 0 0;
     }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.75rem;
     }
 
     footer {
       padding: 2rem 0 3rem;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.94rem;
     }
 
-    .subtle {
-      color: var(--muted);
+    @media (max-width: 1100px) {
+      .poster-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 960px) {
-      .hero-grid,
+      .hero-card,
       .two-col,
-      .three-col,
-      .featured-gallery,
-      .gallery-grid,
-      .contact-grid {
+      .three-col {
         grid-template-columns: 1fr;
+      }
+
+      .hero-side {
+        border-left: 0;
+        border-top: 1px solid var(--line);
       }
 
       .nav {
         flex-direction: column;
         align-items: flex-start;
       }
+    }
 
-      .hero {
-        padding-top: 2.7rem;
+    @media (max-width: 640px) {
+      .poster-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .thumb-image-wrap {
+        height: 360px;
       }
     }
   </style>
@@ -340,10 +377,9 @@
       <div class="brand">Lea Gassab</div>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#about">About</a>
-        <a href="#research">Research</a>
         <a href="#publications">Publications</a>
-        <a href="#talks">Talks</a>
-        <a href="#gallery">Posters</a>
+        <a href="#presentations">Presentations</a>
+        <a href="#posters">Posters</a>
         <a href="#service">Service</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -352,34 +388,42 @@
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="card hero-main">
-          <div class="eyebrow">Postdoctoral Researcher | Quantum Neurobiology</div>
-          <h1>Quantum science, biophysics, and neurobiology brought together in one research profile.</h1>
-          <p class="lead">
-            I am an interdisciplinary physicist and postdoctoral researcher working at the interface of quantum science, molecular biophysics, and neurobiology. My work combines open quantum systems, quantum information, computational modeling, and experimentally informed approaches to study microtubules, light–matter interactions, and quantum-biological mechanisms relevant to living systems and neurodegeneration.
-          </p>
-          <div class="cta-row">
-            <a class="btn primary" href="#contact">Contact</a>
-            <a class="btn" href="#gallery">See posters</a>
-            <a class="btn" href="https://quantneuro.ca/" target="_blank" rel="noreferrer">quantneuro.ca</a>
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-main">
+            <div class="eyebrow">Postdoctoral Researcher in Quantum Neurobiology</div>
+            <h1>Lea Gassab</h1>
+            <div class="subtitle">Quantum biology, molecular biophysics, quantum information, and experimentally connected interdisciplinary research</div>
+            <p class="lead">
+              I am an interdisciplinary physicist and postdoctoral researcher at the University of Waterloo. My work brings together open quantum systems, quantum information, molecular biophysics, computational modeling, and experimentally informed approaches to study microtubules, light matter interactions, and quantum biological mechanisms relevant to living systems and neurodegeneration.
+            </p>
+            <div class="cta-row">
+              <a class="btn primary" href="mailto:lgassab@uwaterloo.ca">Email</a>
+              <a class="btn" href="https://scholar.google.com/citations?hl=en&user=MJC4l_MAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+              <a class="btn" href="https://orcid.org/0000-0001-9961-0658" target="_blank" rel="noreferrer">ORCID</a>
+              <a class="btn" href="https://ca.linkedin.com/in/lea-gassab-4276a626a" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="btn" href="https://www.quantneuro.ca/team" target="_blank" rel="noreferrer">QuantNeuro</a>
+            </div>
           </div>
+          <aside class="hero-side">
+            <div class="hero-info">
+              <strong>Current role</strong>
+              Provost Postdoctoral Scholar, University of Waterloo
+            </div>
+            <div class="hero-info">
+              <strong>Core areas</strong>
+              Quantum biology, quantum neurobiology, microtubule biophysics, quantum information, quantum optics
+            </div>
+            <div class="hero-info">
+              <strong>Technical strengths</strong>
+              Python, Mathematica, Julia, Linux, HPC, molecular modeling, confocal imaging, bioinformatics, scientific writing
+            </div>
+            <div class="hero-info">
+              <strong>Languages</strong>
+              French, English, Spanish, Turkish, Arabic
+            </div>
+          </aside>
         </div>
-
-        <aside class="card hero-side">
-          <div class="stat">
-            <strong>8+</strong>
-            Refereed journal articles and conference papers across quantum biology, quantum information, and biophysics.
-          </div>
-          <div class="stat">
-            <strong>17+</strong>
-            Talks, seminars, posters, and invited presentations.
-          </div>
-          <div class="stat">
-            <strong>5</strong>
-            Working languages: French, English, Spanish, Turkish, and Arabic.
-          </div>
-        </aside>
       </div>
     </section>
 
@@ -387,104 +431,50 @@
       <div class="container two-col">
         <div class="card panel">
           <div class="section-head">
-            <h2>About</h2>
+            <h2>Research profile</h2>
           </div>
           <p>
-            I am currently based at the University of Waterloo, where I work on quantum-biological mechanisms in microtubules and neurodegeneration. My background spans quantum physics, quantum metrology, molecular biophysics, computational modeling, and interdisciplinary research connected to experimentally testable biological questions.
+            My research focuses on quantum biological questions that can be approached with rigorous physical modeling and meaningful biological interpretation. I am particularly interested in microtubules, excitation and information dynamics, oxidative processes, neurodegeneration, light matter interactions, and open quantum system methods that connect theory to experimentally testable problems.
           </p>
-          <p class="small">
-            Research interests: quantum biology, quantum neurobiology, molecular biophysics, open quantum systems, quantum information, quantum optics, quantum metrology, photonics, and microtubule biophysics.
-          </p>
+          <div class="chips">
+            <span class="chip">Quantum biology</span>
+            <span class="chip">Quantum neurobiology</span>
+            <span class="chip">Open quantum systems</span>
+            <span class="chip">Quantum information</span>
+            <span class="chip">Molecular biophysics</span>
+            <span class="chip">Microtubules</span>
+            <span class="chip">Photonics</span>
+            <span class="chip">Quantum metrology</span>
+          </div>
         </div>
 
         <div class="card panel">
           <div class="section-head">
-            <h2>Quick profile</h2>
+            <h2>Education and appointments</h2>
           </div>
-          <div class="chips">
-            <span class="chip">University of Waterloo</span>
-            <span class="chip">Provost Postdoctoral Scholar</span>
-            <span class="chip">Quantum Biology</span>
-            <span class="chip">Quantum Information</span>
-            <span class="chip">Microtubules</span>
-            <span class="chip">Neurodegeneration</span>
-            <span class="chip">Molecular modeling</span>
-            <span class="chip">HPC</span>
-            <span class="chip">Experiment-informed biophysics</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="research">
-      <div class="container">
-        <div class="section-head">
-          <h2>Research directions</h2>
-        </div>
-        <div class="three-col">
-          <div class="card panel">
-            <h3>Quantum biology and neurodegeneration</h3>
-            <p>Mechanistic and quantitative approaches to quantum effects in living systems, with emphasis on microtubules, oxidative processes, and neurodegenerative disease relevance.</p>
-          </div>
-          <div class="card panel">
-            <h3>Open quantum systems and information flow</h3>
-            <p>Modeling coherence, dissipation, transport, and information dynamics using tools from quantum information science and nonequilibrium physics.</p>
-          </div>
-          <div class="card panel">
-            <h3>Computational and experimental bridges</h3>
-            <p>Linking theory to biophysical workflows through numerical simulation, molecular modeling, microtubule polymerization assays, confocal imaging, and data analysis.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container two-col">
-        <div class="card panel">
-          <div class="section-head"><h2>Education</h2></div>
           <div class="timeline">
             <div class="item">
-              <div class="item-meta">2020–2024</div>
-              <h3>Ph.D. in Physics, Koç University</h3>
-              <p>Thesis: <em>Quantum Metrology for Biological Systems</em></p>
-            </div>
-            <div class="item">
-              <div class="item-meta">2017–2020</div>
-              <h3>M.Sc. in Physics (Theoretical), École Normale Supérieure de Lyon</h3>
-            </div>
-            <div class="item">
-              <div class="item-meta">2016–2017</div>
-              <h3>B.Sc. in Physics, École Normale Supérieure de Lyon</h3>
-            </div>
-            <div class="item">
-              <div class="item-meta">2014–2016</div>
-              <h3>Scientific Preparatory Class (CPGE), Lycée Champollion</h3>
-            </div>
-          </div>
-        </div>
-
-        <div class="card panel">
-          <div class="section-head"><h2>Appointments and research experience</h2></div>
-          <div class="timeline">
-            <div class="item">
-              <div class="item-meta">2025–2027</div>
+              <div class="item-meta">2025 to 2027</div>
               <h3>Provost Postdoctoral Scholar, University of Waterloo</h3>
-              <p>Research on quantum-biological mechanisms in microtubules and neurodegeneration, combining theory, computation, and experimentally guided biophysical approaches.</p>
+              <p class="muted">Research on quantum biological mechanisms in microtubules and neurodegeneration</p>
             </div>
             <div class="item">
               <div class="item-meta">2025</div>
               <h3>Postdoctoral Scholar, University of Waterloo</h3>
-              <p>Quantum effects in microtubules using molecular dynamics, quantum simulations, Python, and high-performance computing.</p>
+              <p class="muted">Quantum effects in microtubules using molecular dynamics, quantum simulations, Python, and HPC workflows</p>
             </div>
             <div class="item">
-              <div class="item-meta">2020</div>
-              <h3>Research Intern, University of Alberta</h3>
-              <p>Project on long-lived luminescence in microtubules.</p>
+              <div class="item-meta">2020 to 2024</div>
+              <h3>PhD in Physics, Koç University</h3>
+              <p class="muted">Thesis: Quantum Metrology for Biological Systems</p>
             </div>
             <div class="item">
-              <div class="item-meta">2018</div>
-              <h3>Research Intern, University of KwaZulu-Natal</h3>
-              <p>Project on quantum correlations and geomagnetic storms.</p>
+              <div class="item-meta">2017 to 2020</div>
+              <h3>MSc in Physics, Theoretical track, École Normale Supérieure de Lyon</h3>
+            </div>
+            <div class="item">
+              <div class="item-meta">2016 to 2017</div>
+              <h3>BSc in Physics, École Normale Supérieure de Lyon</h3>
             </div>
           </div>
         </div>
@@ -494,115 +484,155 @@
     <section id="publications">
       <div class="container">
         <div class="section-head">
-          <h2>Selected publications</h2>
+          <h2>Publications</h2>
+          <p class="small">Full list of journal articles, conference proceedings, and manuscripts in progress from the materials you provided.</p>
         </div>
-        <div class="pub-list">
-          <div class="pub">
-            <div class="pub-title">Quantum Information Flow in Microtubule Tryptophan Networks</div>
-            <div class="small">Entropy (2026)</div>
+
+        <div class="card panel" style="margin-bottom: 1rem;">
+          <h3>Journal articles</h3>
+          <div class="publication-list">
+            <div class="pub">
+              <div class="pub-title">Gassab, L., Pusuluk, O., and Craddock, T. J. A. Quantum Information Flow in Microtubule Tryptophan Networks. Entropy, 2026.</div>
+              <a class="doi-link" href="https://doi.org/10.3390/e28020204" target="_blank" rel="noreferrer">DOI 10.3390/e28020204</a>
+            </div>
+            <div class="pub">
+              <div class="pub-title">Gassab, L., and Craddock, T. J. A. Optical Properties of the Cytoskeleton: Light Matter Interactions, Quantum Effects, and Biological Implications. Journal of Physics: Photonics, 2026.</div>
+              <a class="doi-link" href="https://doi.org/10.1088/2515-7647/ae3ee8" target="_blank" rel="noreferrer">DOI 10.1088/2515-7647/ae3ee8</a>
+            </div>
+            <div class="pub">
+              <div class="pub-title">Gassab, L., Pusuluk, O., Cattaneo, M., and Müstecaplıoğlu, Ö. E. Quantum Models of Consciousness from a Quantum Information Science Perspective. Entropy, 27(3), 243, 2025.</div>
+              <a class="doi-link" href="https://doi.org/10.3390/e27030243" target="_blank" rel="noreferrer">DOI 10.3390/e27030243</a>
+            </div>
+            <div class="pub">
+              <div class="pub-title">Gassab, L., and Müstecaplıoğlu, Ö. E. Spin Squeezing Enhanced Quantum Magnetometry with Nitrogen Vacancy Center Qutrits. New Journal of Physics, 2025.</div>
+              <a class="doi-link" href="https://doi.org/10.1088/1367-2630/adf87b" target="_blank" rel="noreferrer">DOI 10.1088/1367-2630/adf87b</a>
+            </div>
+            <div class="pub">
+              <div class="pub-title">Gassab, L., Pusuluk, O., and Müstecaplıoğlu, Ö. E. Geometrical Optimization of Spin Clusters for the Preservation of Quantum Coherence. Physical Review A, 109(1), 012424, 2024.</div>
+              <a class="doi-link" href="https://doi.org/10.1103/PhysRevA.109.012424" target="_blank" rel="noreferrer">DOI 10.1103/PhysRevA.109.012424</a>
+            </div>
+            <div class="pub">
+              <div class="pub-title">Pedram, A., Besaga, V. R., Gassab, L., Setzpfandt, F., and Müstecaplıoğlu, Ö. E. Quantum Estimation of the Stokes Vector Rotation for a General Polarimetric Transformation. New Journal of Physics, 26(9), 093033, 2024.</div>
+              <a class="doi-link" href="https://doi.org/10.1088/1367-2630/ad7979" target="_blank" rel="noreferrer">DOI 10.1088/1367-2630/ad7979</a>
+            </div>
+            <div class="pub">
+              <div class="pub-title">Gassab, L., Pedram, A., and Müstecaplıoğlu, Ö. E. Conditions on Detecting Tripartite Entangled State in Psychophysical Experiments. The European Physical Journal Plus, 139, 379, 2024.</div>
+              <a class="doi-link" href="https://doi.org/10.1140/epjp/s13360-024-05157-4" target="_blank" rel="noreferrer">DOI 10.1140/epjp/s13360-024-05157-4</a>
+            </div>
           </div>
-          <div class="pub">
-            <div class="pub-title">Optical Properties of the Cytoskeleton: Light–Matter Interactions, Quantum Effects, and Biological Implications</div>
-            <div class="small">Journal of Physics: Photonics (2026)</div>
+        </div>
+
+        <div class="two-col">
+          <div class="card panel">
+            <h3>Conference proceedings</h3>
+            <div class="publication-list">
+              <div class="pub">
+                <div class="pub-title">Gassab, L., and Craddock, T. J. A. Quantum Optical Effects in Neuronal Microtubules: Superradiance under Structural Disorder. Proceedings of SPIE, 2026.</div>
+                <a class="doi-link" href="https://doi.org/10.1117/12.3072614" target="_blank" rel="noreferrer">DOI 10.1117/12.3072614</a>
+              </div>
+              <div class="pub">
+                <div class="pub-title">Izadyari, M., Pedram, A., Gassab, L., Müstecaplıoğlu, Ö. E., and Sinha, K. Near Surface Quantum Sensing. Proceedings of SPIE, 2025.</div>
+                <a class="doi-link" href="https://doi.org/10.1117/12.3047680" target="_blank" rel="noreferrer">DOI 10.1117/12.3047680</a>
+              </div>
+            </div>
           </div>
-          <div class="pub">
-            <div class="pub-title">Quantum Optical Effects in Neuronal Microtubules: Super-Radiance under Structural Disorder</div>
-            <div class="small">Proceedings of SPIE (2026)</div>
-          </div>
-          <div class="pub">
-            <div class="pub-title">Quantum Models of Consciousness from a Quantum Information Science Perspective</div>
-            <div class="small">Entropy, 27(3), 243 (2025)</div>
-          </div>
-          <div class="pub">
-            <div class="pub-title">Spin Squeezing Enhanced Quantum Magnetometry with Nitrogen-Vacancy Center Qutrits</div>
-            <div class="small">New Journal of Physics (2025)</div>
-          </div>
-          <div class="pub">
-            <div class="pub-title">Geometrical Optimization of Spin Clusters for the Preservation of Quantum Coherence</div>
-            <div class="small">Physical Review A, 109(1), 012424 (2024)</div>
-          </div>
-          <div class="pub">
-            <div class="pub-title">Conditions on Detecting Tripartite Entangled State in Psychophysical Experiments</div>
-            <div class="small">The European Physical Journal Plus, 139(5), 379 (2024)</div>
+
+          <div class="card panel">
+            <h3>Manuscripts and works in progress</h3>
+            <div class="publication-list">
+              <div class="pub"><div class="pub-title">Gassab, L., and Craddock, T. J. A. Sensitivity of Quantum Yield to Tryptophan Arrangement in Microtubule Structures.</div></div>
+              <div class="pub"><div class="pub-title">Gassab, L., Pusuluk, O., Müstecaplıoğlu, Ö. E., Kominis, I. K., and Xie, C. Beyond the Nexus: Quantum and Biology Intertwined.</div></div>
+              <div class="pub"><div class="pub-title">Izadyari, M., Gassab, L., Pedram, A., Sinha, K., and Müstecaplıoğlu, Ö. E. Near Surface Quantum Sensing.</div></div>
+              <div class="pub"><div class="pub-title">Zadeh Haghighi, H., Gassab, L., and Craddock, T. J. A. Is Ultraweak Ultraviolet Signaling the Key to Living Systems?</div></div>
+              <div class="pub"><div class="pub-title">Additional early research theses and reports are available on request.</div></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="talks">
-      <div class="container two-col">
-        <div class="card panel">
-          <div class="section-head"><h2>Talks and posters</h2></div>
-          <ul class="clean">
-            <li>Quantum Mechanisms Behind Oxidative Damage in Neurodegenerative Disease — The Quantum Biology Forum (2026), flash talk and poster.</li>
-            <li>Quantum Effects in Microtubules: Energy Flow, Information Dynamics, and Relevance to Neurodegeneration — NITHECS seminar (2026), invited seminar.</li>
-            <li>Quantum Optical Effects in Neuronal Microtubules: Super-Radiance under Structural Disorder — SPIE Conference (2026), invited talk.</li>
-            <li>Quantum Information Protection in the Posner Model of Cognition — Messina, Italy (2025), invited keynote.</li>
-            <li>Can Quantum Probability Explain How We Decide? — BrainModes 2025, poster presentation.</li>
-            <li>Protection of Quantum Coherence by Optimizing Network Geometry — ITAMP Winter School and KOBIT 24, poster presentations.</li>
-          </ul>
-        </div>
-
-        <div class="card panel">
-          <div class="section-head"><h2>Awards and fellowships</h2></div>
-          <ul class="clean">
-            <li>Northwell Health Certificate of Achievement (2026).</li>
-            <li>Provost’s Program for Interdisciplinary Postdoctoral Scholars, University of Waterloo (2025–2027).</li>
-            <li>ITAMP Harvard Travel Funding (2024).</li>
-            <li>TÜBİTAK Graduate Scholarship Performance Program (2024).</li>
-            <li>TÜBİTAK Conference Travel Grant (2021–2024).</li>
-            <li>Merit-Based Student Aid, Réunion Region (2017–2020).</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery">
+    <section id="presentations">
       <div class="container">
         <div class="section-head">
-          <h2>Poster and presentation gallery</h2>
-          <p class="small">These are direct examples of poster and presentation materials that can be shared with recruiters, collaborators, and conference contacts.</p>
+          <h2>Presentations</h2>
+          <p class="small">Complete presentation list from your CV and CCV materials.</p>
         </div>
+        <div class="card panel">
+          <div class="presentation-list">
+            <div class="presentation"><div class="presentation-title">2026. Quantum Mechanisms Behind Oxidative Damage in Neurodegenerative Disease. The Quantum Biology Forum, Washington DC, United States. Flash talk and poster presentation.</div></div>
+            <div class="presentation"><div class="presentation-title">2026. Quantum Effects in Microtubules: Energy Flow, Information Dynamics, and Relevance to Neurodegeneration. Seminar NITHECS, online, South Africa. Invited seminar.</div></div>
+            <div class="presentation"><div class="presentation-title">2026. Quantum Optical Effects in Neuronal Microtubules: Super Radiance under Structural Disorder. SPIE Conference, San Francisco, United States. Invited talk.</div></div>
+            <div class="presentation"><div class="presentation-title">2025. Quantum Information Protection in the Posner Model of Cognition. Classical and Quantum Processes in the Brain: From Molecules to the Psyche, Messina, Italy. Invited keynote talk.</div></div>
+            <div class="presentation"><div class="presentation-title">2025. Can Quantum Probability Explain How We Decide? BrainModes 2025, Toronto, Canada. Poster presentation.</div></div>
+            <div class="presentation"><div class="presentation-title">2024. Entanglement Study in the Posner Cluster. QuEST Journal Club, Istanbul, Türkiye.</div></div>
+            <div class="presentation"><div class="presentation-title">2024. Protection of Quantum Coherence by Optimizing Network Geometry. ITAMP Winter School, United States. Poster presentation.</div></div>
+            <div class="presentation"><div class="presentation-title">2024. Protection of Quantum Coherence by Optimizing Network Geometry. KOBIT 24, Gebze, Türkiye. Poster presentation.</div></div>
+            <div class="presentation"><div class="presentation-title">2023. Can the Human Eye Detect Multipartite Entanglement? KOBIT 23, Eskişehir, Türkiye. Oral presentation.</div></div>
+            <div class="presentation"><div class="presentation-title">2023. Utilizing Entangled NV Centers in Biological Systems. QuEST Journal Club, Istanbul, Türkiye.</div></div>
+            <div class="presentation"><div class="presentation-title">2023. Protection of Quantum Coherence by Optimizing Network Geometry. QuEBS 23, London, United Kingdom. Oral presentation.</div></div>
+            <div class="presentation"><div class="presentation-title">2022. Can the Human Eye Detect Multipartite Entangled Light? QuEBS 22, Heraklion, Greece. Poster presentation.</div></div>
+            <div class="presentation"><div class="presentation-title">2022. Chirality Induced Spin Selectivity. QuEST Journal Club, Istanbul, Türkiye.</div></div>
+            <div class="presentation"><div class="presentation-title">2022. Can the Human Eye Detect Two Photons Entangled State? LPHYS'22, online, France. Oral presentation.</div></div>
+            <div class="presentation"><div class="presentation-title">2021. Artificial Neuron and Quantum Brain. QuEST Journal Club, Istanbul, Türkiye.</div></div>
+            <div class="presentation"><div class="presentation-title">2018. An Open Quantum Systems Approach to the Radical Pair Mechanism. South African Institute of Physics Conference, Bloemfontein, South Africa. Poster presentation.</div></div>
+            <div class="presentation"><div class="presentation-title">2018. Influence of Earth’s Magnetic Field on Human Health: A Quantum Mechanism? NITheP Seminar, Durban, South Africa. Oral presentation.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="featured-gallery">
-          <div class="poster-card">
-            <img src="poster_Northwell.jpg" alt="Northwell poster by Lea Gassab">
-            <div class="poster-info">
-              <h3>Northwell poster</h3>
-              <p class="small">Example of recent conference poster work in quantum biology and neurodegeneration.</p>
+    <section id="posters">
+      <div class="container">
+        <div class="section-head">
+          <h2>Posters and visual examples</h2>
+          <p class="small">A cleaner thumbnail layout. Click any image to open the full poster file.</p>
+        </div>
+        <div class="poster-grid">
+          <div class="thumb-card">
+            <a class="thumb-link" href="poster_Northwell.jpg" target="_blank" rel="noreferrer">
+              <div class="thumb-image-wrap">
+                <img src="poster_Northwell.jpg" alt="Northwell poster by Lea Gassab">
+              </div>
+            </a>
+            <div class="thumb-info">
+              <h3>Quantum Mechanisms Behind Oxidative Damage in Neurodegenerative Disease</h3>
+              <p class="small">Recent conference poster in quantum biology and neurodegeneration.</p>
             </div>
           </div>
 
-          <div class="gallery-grid">
-            <div class="poster-card">
-              <img src="brain_mode_poster.jpg" alt="BrainModes poster by Lea Gassab">
-              <div class="poster-info">
-                <h3>BrainModes poster</h3>
-                <p class="small">Poster presentation example highlighting interdisciplinary research communication.</p>
+          <div class="thumb-card">
+            <a class="thumb-link" href="brain_mode_poster.jpg" target="_blank" rel="noreferrer">
+              <div class="thumb-image-wrap">
+                <img src="brain_mode_poster.jpg" alt="BrainModes poster by Lea Gassab">
               </div>
+            </a>
+            <div class="thumb-info">
+              <h3>BrainModes poster</h3>
+              <p class="small">Interdisciplinary research communication example.</p>
             </div>
+          </div>
 
-            <div class="poster-card">
-              <img src="geo poster.jpg" alt="Geometry poster by Lea Gassab">
-              <div class="poster-info">
-                <h3>Geometry poster</h3>
-                <p class="small">Poster on quantum coherence and network geometry.</p>
+          <div class="thumb-card">
+            <a class="thumb-link" href="geo%20poster.jpg" target="_blank" rel="noreferrer">
+              <div class="thumb-image-wrap">
+                <img src="geo%20poster.jpg" alt="Geometry poster by Lea Gassab">
               </div>
+            </a>
+            <div class="thumb-info">
+              <h3>Protection of Quantum Coherence by Optimizing Network Geometry</h3>
+              <p class="small">Poster on coherence preservation and network geometry.</p>
             </div>
+          </div>
 
-            <div class="poster-card">
-              <img src="vision poster.jpg" alt="Quantum vision poster by Lea Gassab">
-              <div class="poster-info">
-                <h3>Quantum vision poster</h3>
-                <p class="small">Poster example connected to quantum vision and biological measurement questions.</p>
+          <div class="thumb-card">
+            <a class="thumb-link" href="vision%20poster.jpg" target="_blank" rel="noreferrer">
+              <div class="thumb-image-wrap">
+                <img src="vision%20poster.jpg" alt="Quantum vision poster by Lea Gassab">
               </div>
-            </div>
-
-            <div class="poster-card">
-              <div class="poster-info" style="min-height: 100%; display:flex; flex-direction:column; justify-content:center; background: linear-gradient(180deg, #fbfdff 0%, #eef5fb 100%);">
-                <h3>Add more materials here</h3>
-                <p class="small">You can later add conference slides, a headshot, figure panels, or links to full poster PDFs.</p>
-              </div>
+            </a>
+            <div class="thumb-info">
+              <h3>Quantum vision poster</h3>
+              <p class="small">Poster connected to quantum vision and psychophysical questions.</p>
             </div>
           </div>
         </div>
@@ -613,71 +643,35 @@
       <div class="container two-col">
         <div class="card panel">
           <div class="section-head"><h2>Teaching, mentoring, and leadership</h2></div>
-          <ul class="clean">
-            <li>Teaching assistant in advanced quantum mechanics, applied mathematics, advanced electromagnetism, and general physics laboratory.</li>
-            <li>Mentored students in theoretical and experimental workflows, including reconstitution of tubulin kits and microtubule polymerization assays under drug conditions.</li>
-            <li>Organizer of the Quantum Vision Journal Club, outreach events, and the ALIFE 2026 workshop on Quantum Biology and Artificial Life.</li>
-          </ul>
+          <div class="stack">
+            <div class="item"><strong>Teaching</strong><div class="small">Teaching assistant in advanced quantum mechanics, applied mathematics, advanced electromagnetism, and general physics laboratory.</div></div>
+            <div class="item"><strong>Mentoring</strong><div class="small">Mentored students in theoretical and experimental workflows, including microtubule polymerization assays and interdisciplinary research development.</div></div>
+            <div class="item"><strong>Leadership</strong><div class="small">Organizer of the Quantum Vision Journal Club, scientific outreach activities, and the ALIFE 2026 workshop on quantum biology and artificial life.</div></div>
+          </div>
         </div>
 
         <div class="card panel">
-          <div class="section-head"><h2>Professional service</h2></div>
-          <ul class="clean">
-            <li>Reviewer for Brain Research, Frontiers, and Computational and Structural Biotechnology Journal.</li>
-            <li>Abstract and Flash Talk Jury, Path Symposium 2026, University of Waterloo.</li>
-            <li>Jury/Judge for Synapse Science.</li>
-            <li>Conference and community engagement through scientific outreach and mentoring across several countries.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="card panel">
-          <div class="section-head"><h2>Technical skills</h2></div>
-          <div class="chips">
-            <span class="chip">Python</span>
-            <span class="chip">Mathematica</span>
-            <span class="chip">Julia</span>
-            <span class="chip">Linux</span>
-            <span class="chip">HPC</span>
-            <span class="chip">Quantum information</span>
-            <span class="chip">Open quantum systems</span>
-            <span class="chip">Quantum optics</span>
-            <span class="chip">Quantum metrology</span>
-            <span class="chip">Molecular modeling</span>
-            <span class="chip">Confocal imaging</span>
-            <span class="chip">Microtubule assays</span>
-            <span class="chip">Bioinformatics</span>
-            <span class="chip">Machine learning</span>
-            <span class="chip">Inkscape</span>
-            <span class="chip">LaTeX</span>
-            <span class="chip">Scientific writing</span>
-            <span class="chip">Research proposal development</span>
+          <div class="section-head"><h2>Professional service and recognition</h2></div>
+          <div class="stack">
+            <div class="item"><strong>Reviewer</strong><div class="small">Brain Research, Frontiers, and Computational and Structural Biotechnology Journal.</div></div>
+            <div class="item"><strong>Jury roles</strong><div class="small">Abstract and Flash Talk Jury, Path Symposium 2026, University of Waterloo. Jury and judge for Synapse Science.</div></div>
+            <div class="item"><strong>Awards</strong><div class="small">Northwell Health Certificate of Achievement, Provost’s Program for Interdisciplinary Postdoctoral Scholars, ITAMP Harvard Travel Funding, and TÜBİTAK funding recognition.</div></div>
           </div>
         </div>
       </div>
     </section>
 
     <section id="contact">
-      <div class="container contact-grid">
+      <div class="container">
         <div class="card panel">
-          <div class="section-head"><h2>Contact</h2></div>
+          <div class="section-head"><h2>Contact and external profiles</h2></div>
           <p><strong>Email:</strong> <a href="mailto:lgassab@uwaterloo.ca">lgassab@uwaterloo.ca</a></p>
-          <p><strong>Website:</strong> <a href="https://quantneuro.ca/" target="_blank" rel="noreferrer">quantneuro.ca</a></p>
-          <p><strong>Location:</strong> Waterloo, Ontario, Canada</p>
-          <p><strong>Languages:</strong> French, English, Spanish, Turkish, Arabic</p>
-        </div>
-
-        <div class="card panel">
-          <div class="section-head"><h2>For recruiters and collaborators</h2></div>
-          <p>
-            This website is meant to give a fast, clear overview of my profile, research direction, publications, presentations, and selected visual materials without needing to open a full CV or CCV first.
-          </p>
-          <p class="small">
-            You can later add links here to your full CV PDF, Google Scholar, ORCID, GitHub, LinkedIn, poster PDFs, or selected media coverage.
-          </p>
+          <p><strong>Research website:</strong> <a href="https://www.quantneuro.ca/team" target="_blank" rel="noreferrer">QuantNeuro profile</a></p>
+          <div class="link-row">
+            <a class="btn" href="https://scholar.google.com/citations?hl=en&user=MJC4l_MAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+            <a class="btn" href="https://orcid.org/0000-0001-9961-0658" target="_blank" rel="noreferrer">ORCID</a>
+            <a class="btn" href="https://ca.linkedin.com/in/lea-gassab-4276a626a" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
         </div>
       </div>
     </section>
@@ -685,7 +679,7 @@
 
   <footer>
     <div class="container">
-      Built as a clean GitHub Pages portfolio for Lea Gassab. Update image filenames here only if you rename files in the repository.
+      This page is designed as a professional recruiter and collaborator facing profile. You can still refine wording, add a CV download, or rename image files later if desired.
     </div>
   </footer>
 </body>
