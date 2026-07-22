@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lea Gassab | Research Portfolio</title>
+  <meta name="description" content="Research portfolio of Lea Gassab, Provost Interdisciplinary Postdoctoral Scholar working in quantum biology, quantum neurobiology, molecular biophysics, and quantum information science." />
+  <style>
+    :root {
+      --bg: #f4f8fa;
+      --surface: #ffffff;
+      --surface-soft: #f7fbfc;
+      --text: #17232d;
+      --muted: #5c6b73;
+      --line: #d7e3e8;
+      --accent: #0b6f79;
+      --accent-dark: #075761;
+      --accent-soft: #e7f3f5;
+      --blue: #205c94;
+      --blue-soft: #edf4fb;
+      --gold: #926d18;
+      --gold-soft: #fbf6e8;
+      --max: 1180px;
+      --radius: 18px;
+      --shadow: 0 12px 30px rgba(17, 40, 66, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f8fbfc 0%, #f4f8fa 100%);
+      line-height: 1.65;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      z-index: -1;
+      border-radius: 999px;
+      filter: blur(60px);
+      opacity: 0.28;
+      pointer-events: none;
+    }
+
+    body::before {
+      width: 240px;
+      height: 240px;
+      top: 100px;
+      right: -40px;
+      background: rgba(11, 111, 121, 0.14);
+    }
+
+    body::after {
+      width: 220px;
+      height: 220px;
+      left: -60px;
+      top: 640px;
+      background: rgba(32, 92, 148, 0.10);
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    p { margin-top: 0; }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(245, 248, 252, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(214, 225, 236, 0.9);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.88rem 0;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 1.04rem;
+      letter-spacing: 0.01em;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.82rem;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 650;
+      font-size: 0.91rem;
+    }
+
+    .hero { padding: 3rem 0 1.35rem; }
+
+    .hero-card {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 1.2rem;
+      background: linear-gradient(135deg, #ffffff 0%, #fbfefe 100%);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--blue) 100%);
+    }
+
+    .hero-main { padding: 2rem; }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      border-radius: 999px;
+      padding: 0.38rem 0.78rem;
+      font-weight: 750;
+      font-size: 0.86rem;
+      margin-bottom: 0.95rem;
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0 0 0.75rem;
+      line-height: 1.18;
+    }
+
+    h1 {
+      font-size: clamp(2.15rem, 4vw, 3.15rem);
+      letter-spacing: -0.025em;
+    }
+
+    h2 { font-size: clamp(1.4rem, 2vw, 1.95rem); }
+    h3 { font-size: 1.08rem; }
+    h4 { font-size: 1rem; }
+
+    .subtitle {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.8rem;
+      max-width: 66ch;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.02rem;
+      max-width: 70ch;
+      margin-bottom: 0;
+    }
+
+    .cta-row,
+    .link-row,
+    .filter-row,
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .cta-row { margin-top: 1.15rem; }
+
+    .btn,
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0.72rem 0.95rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn:hover,
+    .filter-btn:hover {
+      border-color: #b9ced7;
+      text-decoration: none;
+    }
+
+    .btn.primary,
+    .filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .hero-side {
+      padding: 1.4rem;
+      background: linear-gradient(180deg, #fbfefe 0%, #f2f7f7 100%);
+      border-left: 1px solid var(--line);
+      display: grid;
+      gap: 0.9rem;
+      align-content: start;
+    }
+
+    .hero-info {
+      padding: 0.95rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.92);
+    }
+
+    .hero-info strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 0.98rem;
+    }
+
+    section { padding: 1rem 0 1.75rem; }
+
+    .section-head { margin-bottom: 1rem; }
+
+    .section-head h2 {
+      position: relative;
+      padding-left: 0.95rem;
+    }
+
+    .section-head h2::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.15em;
+      width: 0.28rem;
+      height: 0.9em;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--blue) 100%);
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 82ch;
+      margin: 0.4rem 0 0;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #ffffff 0%, #fcfefe 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .panel { padding: 1.35rem; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .theme-card {
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .theme-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--accent), var(--blue));
+    }
+
+    .theme-card p { color: var(--muted); margin-bottom: 0.8rem; }
+
+    .chip,
+    .tag,
+    .status {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      line-height: 1.2;
+    }
+
+    .chip {
+      padding: 0.42rem 0.68rem;
+      background: #f2f7fc;
+      border: 1px solid var(--line);
+      color: #284156;
+    }
+
+    .tag {
+      padding: 0.3rem 0.55rem;
+      background: var(--blue-soft);
+      color: #315f87;
+      border: 1px solid #d6e5f3;
+      font-weight: 650;
+    }
+
+    .status {
+      padding: 0.31rem 0.58rem;
+      font-weight: 750;
+      border: 1px solid transparent;
+    }
+
+    .status.published {
+      color: var(--accent-dark);
+      background: var(--accent-soft);
+      border-color: #cde4e7;
+    }
+
+    .status.preprint {
+      color: var(--gold);
+      background: var(--gold-soft);
+      border-color: #eadfb8;
+    }
+
+    .status.proceeding {
+      color: #315f87;
+      background: var(--blue-soft);
+      border-color: #d6e5f3;
+    }
+
+    .timeline,
+    .stack,
+    .publication-list,
+    .presentation-list {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .item,
+    .pub,
+    .presentation,
+    .thumb-card {
+      padding: 1rem 1.05rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .item-meta,
+    .small,
+    .muted {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .pub {
+      display: grid;
+      gap: 0.5rem;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+
+    .pub.hidden { display: none; }
+
+    .pub-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .pub-title,
+    .presentation-title {
+      font-weight: 720;
+      line-height: 1.48;
+    }
+
+    .pub-meta { color: var(--muted); font-size: 0.92rem; }
+
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
+    }
+
+    .doi-link {
+      display: inline-block;
+      font-size: 0.92rem;
+      font-weight: 650;
+    }
+
+    .filter-row { margin: 0.8rem 0 1.1rem; }
+    .filter-btn { min-height: 36px; padding: 0.5rem 0.75rem; font-size: 0.85rem; }
+
+    .publication-group + .publication-group { margin-top: 1rem; }
+
+    .presentation-group + .presentation-group { margin-top: 1rem; }
+
+    .presentation-group h3 {
+      margin: 0 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 0.9rem 1rem;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 720;
+    }
+
+    details .presentation-list { margin-top: 0.9rem; }
+
+    .poster-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .thumb-card {
+      padding: 0;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border-radius: 18px;
+    }
+
+    .thumb-link { display: block; background: #f8fbff; }
+
+    .thumb-image-wrap {
+      height: 390px;
+      padding: 0.8rem;
+      background: #f8fbff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .thumb-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .thumb-info { padding: 0.95rem 1rem 1rem; }
+    .thumb-info p { margin: 0.35rem 0 0; }
+
+    .callout {
+      padding: 1rem 1.1rem;
+      border-radius: 14px;
+      background: var(--accent-soft);
+      border: 1px solid #cde4e7;
+      color: #264e53;
+    }
+
+    footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 1100px) {
+      .poster-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 960px) {
+      .hero-card,
+      .two-col,
+      .three-col,
+      .theme-grid,
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links { justify-content: flex-start; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(calc(100% - 1.2rem), var(--max)); }
+      .hero { padding-top: 1.2rem; }
+      .hero-main { padding: 1.35rem; }
+      .hero-side { padding: 1rem; }
+      .poster-grid { grid-template-columns: 1fr; }
+      .thumb-image-wrap { height: 350px; }
+      .nav-links { gap: 0.65rem; }
+      .nav-links a { font-size: 0.86rem; }
+    }
+
+    @media print {
+      header, .filter-row { display: none; }
+      body { background: #fff; }
+      .card, .thumb-card { box-shadow: none; }
+      section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top">Lea Gassab</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#presentations">Talks</a>
+        <a href="#service">Service</a>
+        <a href="#broader">Beyond research</a>
+        <a href="#media">Media</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-main">
+            <div class="eyebrow">Provost Interdisciplinary Postdoctoral Scholar</div>
+            <h1>Lea Gassab</h1>
+            <div class="subtitle">At the interface of quantum biology, molecular biophysics, and quantum information science</div>
+            <p class="lead">I combine theoretical, computational, and experimental approaches to investigate optical and quantum processes in biological systems. My current research focuses on excitation and information dynamics in neuronal microtubules, their sensitivity to structural and oxidative changes, and the development of experimentally testable predictions.</p>
+            <div class="cta-row">
+              <a class="btn primary" href="mailto:lgassab@uwaterloo.ca">Email</a>
+              <a class="btn" href="https://scholar.google.com/citations?hl=en&amp;user=MJC4l_MAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+              <a class="btn" href="https://orcid.org/0000-0001-9961-0658" target="_blank" rel="noreferrer">ORCID</a>
+              <a class="btn" href="https://ca.linkedin.com/in/lea-gassab-4276a626a" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="btn" href="https://www.quantneuro.ca/team" target="_blank" rel="noreferrer">QuantNeuro</a>
+            </div>
+          </div>
+
+          <aside class="hero-side">
+            <div class="hero-info">
+              <strong>Current role</strong>
+              Provost Interdisciplinary Postdoctoral Scholar, University of Waterloo
+            </div>
+            <div class="hero-info">
+              <strong>Core areas</strong>
+              Quantum biology, quantum neurobiology, microtubule biophysics, open quantum systems, quantum sensing
+            </div>
+            <div class="hero-info">
+              <strong>Methods</strong>
+              Computational modeling, Python and HPC, spectroscopy, confocal imaging, biochemical assays, mass-spectrometry workflows
+            </div>
+            <div class="hero-info">
+              <strong>Languages</strong>
+              French, English, Spanish, Turkish, Arabic
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="posters">
+      <div class="container">
+        <div class="section-head">
+          <h2>Selected Research Posters</h2>
+          <p class="section-intro">Click a poster to open the full-size image.</p>
+        </div>
+        <div class="poster-grid">
+          <div class="thumb-card">
+            <a class="thumb-link" href="poster_Northwell.jpg" target="_blank" rel="noreferrer">
+              <div class="thumb-image-wrap"><img src="poster_Northwell.jpg" alt="Quantum Biology Forum 2026 poster by Lea Gassab"></div>
+            </a>
+            <div class="thumb-info"><h3>Quantum Biology Forum, 2026</h3><p class="small">Washington, DC, United States.</p></div>
+          </div>
+
+          <div class="thumb-card">
+            <a class="thumb-link" href="brain_mode_poster.jpg" target="_blank" rel="noreferrer">
+              <div class="thumb-image-wrap"><img src="brain_mode_poster.jpg" alt="BrainModes 2025 poster by Lea Gassab"></div>
+            </a>
+            <div class="thumb-info"><h3>BrainModes, 2025</h3><p class="small">Toronto, Canada.</p></div>
+          </div>
+
+          <div class="thumb-card">
+            <a class="thumb-link" href="geo%20poster.jpg" target="_blank" rel="noreferrer">
+              <div class="thumb-image-wrap"><img src="geo%20poster.jpg" alt="Network geometry and quantum coherence poster by Lea Gassab"></div>
+            </a>
+            <div class="thumb-info"><h3>ITAMP Winter School and KOBIT 24, 2024</h3><p class="small">Arizona, United States and Gebze, Türkiye.</p></div>
+          </div>
+
+          <div class="thumb-card">
+            <a class="thumb-link" href="vision%20poster.jpg" target="_blank" rel="noreferrer">
+              <div class="thumb-image-wrap"><img src="vision%20poster.jpg" alt="Quantum vision poster by Lea Gassab"></div>
+            </a>
+            <div class="thumb-info"><h3>QuEBS 22, 2022</h3><p class="small">Heraklion, Greece.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container two-col">
+        <div class="card panel">
+          <div class="section-head"><h2>Research profile</h2></div>
+          <p>I am an interdisciplinary physicist working at the interface of quantum biology, open quantum systems, quantum information, molecular biophysics, computational modeling, and experimental biophysics. My current research examines quantum-biological processes in neuronal microtubules and their possible relevance to brain function and neurodegenerative disease, with emphasis on excitation dynamics, light-matter interactions, aromatic amino-acid networks, and oxidative modification.</p>
+          <p>My doctoral training was primarily theoretical. During my postdoctoral work, I expanded into spectroscopy, imaging, biochemical methods, and mass spectrometry. This combination allows me to develop mechanistic models, translate them into experimentally testable predictions, and collaborate across physics, biology, computation, and engineering.</p>
+          <div class="chips">
+            <span class="chip">Quantum biology</span>
+            <span class="chip">Quantum neurobiology</span>
+            <span class="chip">Open quantum systems</span>
+            <span class="chip">Quantum information</span>
+            <span class="chip">Molecular biophysics</span>
+            <span class="chip">Microtubules</span>
+            <span class="chip">Photonics</span>
+            <span class="chip">Quantum metrology</span>
+          </div>
+        </div>
+
+        <div class="card panel">
+          <div class="section-head"><h2>Education</h2></div>
+          <div class="timeline">
+            <div class="item">
+              <div class="item-meta">2020 to 2024</div>
+              <h3>PhD in Physics, Koç University</h3>
+              <p class="muted">Thesis: Quantum Metrology for Biological Systems</p>
+            </div>
+            <div class="item">
+              <div class="item-meta">2017 to 2020</div>
+              <h3>MSc in Physics, theoretical track, École Normale Supérieure de Lyon</h3>
+            </div>
+            <div class="item">
+              <div class="item-meta">2016 to 2017</div>
+              <h3>BSc in Physics, École Normale Supérieure de Lyon</h3>
+            </div>
+            <div class="item">
+              <div class="item-meta">2014 to 2016</div>
+              <h3>Scientific Preparatory Class, Lycée Champollion</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <div class="section-head">
+          <h2>Research themes</h2>
+          <p class="section-intro">My work spans several connected areas. The themes below provide context, while the publication list remains complete and chronological.</p>
+        </div>
+
+        <div class="theme-grid">
+          <article class="theme-card">
+            <h3>Microtubule quantum biology and photonics</h3>
+            <p>Excitation transport, information flow, cooperative optical effects, disorder, and tunable ultraviolet responses in tubulin and microtubule aromatic networks.</p>
+            <div class="chips">
+              <span class="tag">Microtubules</span>
+              <span class="tag">Excitons</span>
+              <span class="tag">Photonics</span>
+              <span class="tag">Spectroscopy</span>
+            </div>
+          </article>
+
+          <article class="theme-card">
+            <h3>Oxidative damage and experimental biophysics</h3>
+            <p>Experimental workflows for tubulin polymerization, optical emission, microscopy, biochemical perturbation, and peptide-resolved analysis of oxidative modification.</p>
+            <div class="chips">
+              <span class="tag">Oxidative stress</span>
+              <span class="tag">Mass spectrometry</span>
+              <span class="tag">Imaging</span>
+              <span class="tag">Biochemistry</span>
+            </div>
+          </article>
+
+          <article class="theme-card">
+            <h3>Quantum sensing, metrology, and coherence</h3>
+            <p>Quantum-enhanced measurement, nitrogen-vacancy sensing, polarimetric estimation, and geometrical strategies for preserving quantum resources in noisy systems.</p>
+            <div class="chips">
+              <span class="tag">Quantum sensing</span>
+              <span class="tag">Metrology</span>
+              <span class="tag">NV centers</span>
+              <span class="tag">Decoherence</span>
+            </div>
+          </article>
+
+          <article class="theme-card">
+            <h3>Quantum information in biology, cognition, and memory</h3>
+            <p>Quantum-information approaches to biological systems, psychophysical detection, models of cognition, and controlled benchmarks for context-sensitive associative memory.</p>
+            <div class="chips">
+              <span class="tag">Quantum cognition</span>
+              <span class="tag">Vision</span>
+              <span class="tag">Memory</span>
+              <span class="tag">Plasticity</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <div class="section-head">
+          <h2>Publications</h2>
+          <p class="section-intro">Peer-reviewed articles, preprints, manuscripts under revision, and peer-reviewed conference proceedings. Use the filters to view work by subject.</p>
+        </div>
+
+        <div class="filter-row" role="group" aria-label="Filter publications by research subject">
+          <button class="filter-btn active" type="button" data-filter="all">All</button>
+          <button class="filter-btn" type="button" data-filter="microtubules">Microtubules</button>
+          <button class="filter-btn" type="button" data-filter="sensing">Sensing and metrology</button>
+          <button class="filter-btn" type="button" data-filter="coherence">Coherence</button>
+          <button class="filter-btn" type="button" data-filter="cognition">Cognition and vision</button>
+          <button class="filter-btn" type="button" data-filter="memory">Memory</button>
+          <button class="filter-btn" type="button" data-filter="interface">Quantum-biology interface</button>
+        </div>
+
+        <div class="publication-group card panel">
+          <h3>Peer-reviewed journal articles</h3>
+          <div class="publication-list">
+            <article class="pub" data-topics="microtubules interface">
+              <div class="pub-top">
+                <span class="status published">Published, 2026</span>
+                <div class="chips"><span class="tag">Microtubules</span><span class="tag">Excitonic structure</span></div>
+              </div>
+              <div class="pub-title">Colbourne, M. T., <strong>Gassab, L.</strong>, and Craddock, T. J. A. Effects of Substituted Tryptamines on the Excitonic Structure of the Tubulin Tryptophan Network.</div>
+              <div class="pub-meta"><em>Photonics</em>, 13(7), 636.</div>
+              <div class="pub-links"><a class="doi-link" href="https://doi.org/10.3390/photonics13070636" target="_blank" rel="noreferrer">DOI 10.3390/photonics13070636</a></div>
+            </article>
+
+            <article class="pub" data-topics="microtubules interface coherence">
+              <div class="pub-top">
+                <span class="status published">Published, 2026</span>
+                <div class="chips"><span class="tag">Microtubules</span><span class="tag">Information flow</span></div>
+              </div>
+              <div class="pub-title"><strong>Gassab, L.</strong>, Pusuluk, O., and Craddock, T. J. A. Quantum Information Flow in Microtubule Tryptophan Networks.</div>
+              <div class="pub-meta"><em>Entropy</em>, 28(2), 204.</div>
+              <div class="pub-links"><a class="doi-link" href="https://doi.org/10.3390/e28020204" target="_blank" rel="noreferrer">DOI 10.3390/e28020204</a></div>
+            </article>
+
+            <article class="pub" data-topics="microtubules interface">
+              <div class="pub-top">
+                <span class="status published">Published, 2026</span>
+                <div class="chips"><span class="tag">Cytoskeleton</span><span class="tag">Photonics</span></div>
+              </div>
+              <div class="pub-title"><strong>Gassab, L.</strong>, and Craddock, T. J. A. Optical Properties of the Cytoskeleton: A Review of Light-Matter Interactions, Quantum Effects, and Biological Implications.</div>
+              <div class="pub-meta"><em>Journal of Physics: Photonics</em>, 8, 012006.</div>
+              <div class="pub-links"><a class="doi-link" href="https://doi.org/10.1088/2515-7647/ae3ee8" target="_blank" rel="noreferrer">DOI 10.1088/2515-7647/ae3ee8</a></div>
+            </article>
+
+            <article class="pub" data-topics="sensing coherence">
+              <div class="pub-top">
+                <span class="status published">Published, 2025</span>
+                <div class="chips"><span class="tag">Quantum sensing</span><span class="tag">NV centers</span></div>
+              </div>
+              <div class="pub-title"><strong>Gassab, L.</strong>, and Müstecaplıoğlu, Ö. E. Spin Squeezing Enhanced Quantum Magnetometry with Nitrogen-Vacancy Center Qutrits.</div>
+              <div class="pub-meta"><em>New Journal of Physics</em>, 27(8), 084502.</div>
+              <div class="pub-links"><a class="doi-link" href="https://doi.org/10.1088/1367-2630/adf87b" target="_blank" rel="noreferrer">DOI 10.1088/1367-2630/adf87b</a></div>
+            </article>
+
+            <article class="pub" data-topics="cognition interface">
+              <div class="pub-top">
+                <span class="status published">Published, 2025</span>
+                <div class="chips"><span class="tag">Quantum cognition</span><span class="tag">Consciousness</span></div>
+              </div>
+              <div class="pub-title"><strong>Gassab, L.</strong>, Pusuluk, O., Cattaneo, M., and Müstecaplıoğlu, Ö. E. Quantum Models of Consciousness from a Quantum Information Science Perspective.</div>
+              <div class="pub-meta"><em>Entropy</em>, 27(3), 243.</div>
+              <div class="pub-links"><a class="doi-link" href="https://doi.org/10.3390/e27030243" target="_blank" rel="noreferrer">DOI 10.3390/e27030243</a></div>
+            </article>
+
+            <article class="pub" data-topics="sensing">
+              <div class="pub-top">
+                <span class="status published">Published, 2024</span>
+                <div class="chips"><span class="tag">Polarimetry</span><span class="tag">Quantum estimation</span></div>
+              </div>
+              <div class="pub-title">Pedram, A., Besaga, V. R., <strong>Gassab, L.</strong>, Setzpfandt, F., and Müstecaplıoğlu, Ö. E. Quantum Estimation of the Stokes Vector Rotation for a General Polarimetric Transformation.</div>
+              <div class="pub-meta"><em>New Journal of Physics</em>, 26(9), 093033.</div>
+              <div class="pub-links"><a class="doi-link" href="https://doi.org/10.1088/1367-2630/ad7979" target="_blank" rel="noreferrer">DOI 10.1088/1367-2630/ad7979</a></div>
+            </article>
+
+            <article class="pub" data-topics="coherence">
+              <div class="pub-top">
+                <span class="status published">Published, 2024</span>
+                <div class="chips"><span class="tag">Decoherence</span><span class="tag">Network geometry</span></div>
+              </div>
+              <div class="pub-title"><strong>Gassab, L.</strong>, Pusuluk, O., and Müstecaplıoğlu, Ö. E. Geometrical Optimization of Spin Clusters for the Preservation of Quantum Coherence.</div>
+              <div class="pub-meta"><em>Physical Review A</em>, 109(1), 012424.</div>
+              <div class="pub-links"><a class="doi-link" href="https://doi.org/10.1103/PhysRevA.109.012424" target="_blank" rel="noreferrer">DOI 10.1103/PhysRevA.109.012424</a></div>
+            </article>
+
+            <article class="pub" data-topics="cognition interface">
+              <div class="pub-top">
+                <span class="status published">Published, 2024</span>
+                <div class="chips"><span class="tag">Quantum vision</span><span class="tag">Psychophysics</span></div>
+              </div>
+              <div class="pub-title"><strong>Gassab, L.</strong>, Pedram, A., and Müstecaplıoğlu, Ö. E. Conditions on Detecting Tripartite Entangled State in Psychophysical Experiments.</div>
+              <div class="pub-meta"><em>The European Physical Journal Plus</em>, 139, 379.</div>
+              <div class="pub-links"><a class="doi-link" href="https://doi.org/10.1140/epjp/s13360-024-05157-4" target="_blank" rel="noreferrer">DOI 10.1140/epjp/s13360-024-05157-4</a></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="publication-group card panel">
+          <h3>Preprints and manuscripts under revision</h3>
+          <div class="publication-list">
+            <article class="pub" data-topics="memory cognition">
+              <div class="pub-top">
+                <span class="status preprint">Preprint, 2026</span>
+                <div class="chips"><span class="tag">Associative memory</span><span class="tag">Plasticity</span></div>
+              </div>
+              <div class="pub-title">Goolam Hossen, Y. H., <strong>Gassab, L.</strong>, and Craddock, T. J. A. A Quantum-Like Benchmark for Context-Sensitive Associative Memory with Adaptive Plasticity.</div>
+              <div class="pub-meta">arXiv:2606.12449.</div>
+              <div class="pub-links"><a class="doi-link" href="https://doi.org/10.48550/arXiv.2606.12449" target="_blank" rel="noreferrer">arXiv 2606.12449</a></div>
+            </article>
+
+            <article class="pub" data-topics="interface microtubules sensing coherence cognition">
+              <div class="pub-top">
+                <span class="status preprint">Preprint, 2026</span>
+                <div class="chips"><span class="tag">Quantum biology</span><span class="tag">Evidence map</span></div>
+              </div>
+              <div class="pub-title"><strong>Gassab, L.</strong>, Adams, B., Goolam Hossen, Y. H., Pusuluk, O., Kominis, I. K., Müstecaplıoğlu, Ö. E., Petruccione, F., and Craddock, T. J. A. Quantum in Biology, Quantum for Biology, and Biology for Quantum: Mapping the Evidence and the Road Ahead.</div>
+              <div class="pub-meta">arXiv:2605.00205.</div>
+              <div class="pub-links"><a class="doi-link" href="https://doi.org/10.48550/arXiv.2605.00205" target="_blank" rel="noreferrer">arXiv 2605.00205</a></div>
+            </article>
+
+            <article class="pub" data-topics="microtubules interface">
+              <div class="pub-top">
+                <span class="status preprint">Under revision, 2026</span>
+                <div class="chips"><span class="tag">Microtubules</span><span class="tag">UV spectroscopy</span></div>
+              </div>
+              <div class="pub-title"><strong>Gassab, L.</strong>, and Craddock, T. J. A. Engineering Quantum Optical Responses of Microtubules through Tryptophan-Network Simulations and Ultraviolet Spectroscopy.</div>
+              <div class="pub-meta">arXiv:2604.18604. Manuscript under revision at <em>Science Advances</em>.</div>
+              <div class="pub-links"><a class="doi-link" href="https://doi.org/10.48550/arXiv.2604.18604" target="_blank" rel="noreferrer">arXiv 2604.18604</a></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="publication-group card panel">
+          <h3>Peer-reviewed conference proceedings</h3>
+          <div class="publication-list">
+            <article class="pub" data-topics="microtubules interface coherence">
+              <div class="pub-top">
+                <span class="status proceeding">Proceeding, 2026</span>
+                <div class="chips"><span class="tag">Microtubules</span><span class="tag">Superradiance</span></div>
+              </div>
+              <div class="pub-title"><strong>Gassab, L.</strong>, and Craddock, T. J. A. Quantum Optical Effects in Neuronal Microtubules: Super-Radiance under Structural Disorder.</div>
+              <div class="pub-meta"><em>Proceedings of SPIE</em>, 13872, 1387202.</div>
+              <div class="pub-links"><a class="doi-link" href="https://doi.org/10.1117/12.3072614" target="_blank" rel="noreferrer">DOI 10.1117/12.3072614</a></div>
+            </article>
+
+            <article class="pub" data-topics="sensing">
+              <div class="pub-top">
+                <span class="status proceeding">Proceeding, 2025</span>
+                <div class="chips"><span class="tag">Quantum sensing</span><span class="tag">Near-surface sensing</span></div>
+              </div>
+              <div class="pub-title">Izadyari, M., Pedram, A., <strong>Gassab, L.</strong>, Müstecaplıoğlu, Ö. E., and Sinha, K. Near-Surface Quantum Sensing.</div>
+              <div class="pub-meta"><em>Proceedings of SPIE</em>, 13392.</div>
+              <div class="pub-links"><a class="doi-link" href="https://doi.org/10.1117/12.3047680" target="_blank" rel="noreferrer">DOI 10.1117/12.3047680</a></div>
+            </article>
+          </div>
+        </div>
+
+        <p id="filter-status" class="small" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head"><h2>Research and professional experience</h2></div>
+        <div class="card panel">
+          <div class="experience-grid">
+            <div class="item">
+              <div class="item-meta">September 2025 to present</div>
+              <h3>Provost Interdisciplinary Postdoctoral Scholar, University of Waterloo</h3>
+              <p class="muted">Departments of Biology and Physics &amp; Astronomy. Research on quantum-biological mechanisms in microtubules, optical responses, oxidative modification, and neurodegeneration.</p>
+            </div>
+            <div class="item">
+              <div class="item-meta">January to August 2025</div>
+              <h3>Postdoctoral Researcher, University of Waterloo</h3>
+              <p class="muted">Quantum effects in microtubules using molecular modeling, open-system simulations, Python, and HPC workflows.</p>
+            </div>
+            <div class="item">
+              <div class="item-meta">2020 to 2024</div>
+              <h3>Doctoral Researcher and Teaching Assistant, Koç University</h3>
+              <p class="muted">Quantum metrology, quantum sensing, decoherence, quantum information, and teaching across physics courses.</p>
+            </div>
+            <div class="item">
+              <div class="item-meta">2020</div>
+              <h3>Research Intern in Quantum Biology, University of Alberta</h3>
+              <p class="muted">Project on long-lived luminescence in microtubules.</p>
+            </div>
+            <div class="item">
+              <div class="item-meta">2018</div>
+              <h3>Research Intern in Quantum Biology, University of KwaZulu-Natal</h3>
+              <p class="muted">Project on quantum correlations, radical-pair mechanisms, and geomagnetic effects.</p>
+            </div>
+            <div class="item">
+              <div class="item-meta">2017</div>
+              <h3>Research Intern in Quantum Optics, Laboratoire de Physique des Lasers, CNRS</h3>
+              <p class="muted">Worked on a master-oscillator power-amplifier laser system for chromium atom cooling.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="presentations">
+      <div class="container">
+        <div class="section-head">
+          <h2>Presentations</h2>
+          <p class="section-intro">Presentations are grouped by type so that invited contributions, oral talks, posters, and internal research presentations are clearly distinguished.</p>
+        </div>
+
+        <div class="presentation-group card panel">
+          <h3>Invited and keynote presentations</h3>
+          <div class="presentation-list">
+            <div class="presentation"><div class="presentation-title">2026. Quantum Effects in Microtubules: Energy Flow, Information Dynamics, and Relevance to Neurodegeneration. NITheCS Seminar, online, South Africa. Invited seminar.</div></div>
+            <div class="presentation"><div class="presentation-title">2026. Quantum Optical Effects in Neuronal Microtubules: Super-Radiance under Structural Disorder. SPIE Conference, San Francisco, United States. Invited talk.</div></div>
+            <div class="presentation"><div class="presentation-title">2025. Quantum Information Protection in the Posner Model of Cognition. Classical and Quantum Processes in the Brain: From Molecules to the Psyche, Messina, Italy. Invited keynote talk.</div></div>
+            <div class="presentation"><div class="presentation-title">2018. Influence of Earth’s Magnetic Field on Human Health: A Quantum Mechanism? NITheP Seminar, Durban, South Africa.</div></div>
+          </div>
+        </div>
+
+        <div class="presentation-group card panel">
+          <h3>Contributed oral and flash presentations</h3>
+          <div class="presentation-list">
+            <div class="presentation"><div class="presentation-title">2026. Excitation and Information Dynamics in Microtubule Tryptophan Networks. QIP, Växjö, Sweden. Oral presentation.</div></div>
+            <div class="presentation"><div class="presentation-title">2026. Quantum and Molecular Approaches to Microtubule Energy Dynamics. QuEBS, Budapest, Hungary. Oral presentation.</div></div>
+            <div class="presentation"><div class="presentation-title">2026. Quantum Mechanisms Behind Oxidative Damage in Neurodegenerative Disease. Quantum Biology Forum, Washington, DC, United States. Flash talk.</div></div>
+            <div class="presentation"><div class="presentation-title">2023. Can the Human Eye Detect Multipartite Entanglement? KOBIT 23, Eskişehir, Türkiye. Oral presentation.</div></div>
+            <div class="presentation"><div class="presentation-title">2023. Protection of Quantum Coherence by Optimizing Network Geometry. QuEBS 23, London, United Kingdom. Oral presentation.</div></div>
+            <div class="presentation"><div class="presentation-title">2022. Can the Human Eye Detect Two-Photon Entangled States? LPHYS'22, online. Oral presentation.</div></div>
+          </div>
+        </div>
+
+        <div class="presentation-group card panel">
+          <h3>Poster presentations</h3>
+          <div class="presentation-list">
+            <div class="presentation"><div class="presentation-title">2026. Quantum Mechanisms Behind Oxidative Damage in Neurodegenerative Disease. Quantum Biology Forum, Washington, DC, United States.</div></div>
+            <div class="presentation"><div class="presentation-title">2025. Can Quantum Probability Explain How We Decide? BrainModes 2025, Toronto, Canada.</div></div>
+            <div class="presentation"><div class="presentation-title">2024. Protection of Quantum Coherence by Optimizing Network Geometry. ITAMP Winter School, Arizona, United States.</div></div>
+            <div class="presentation"><div class="presentation-title">2024. Protection of Quantum Coherence by Optimizing Network Geometry. KOBIT 24, Gebze, Türkiye.</div></div>
+            <div class="presentation"><div class="presentation-title">2022. Can the Human Eye Detect Multipartite Entangled Light? QuEBS 22, Heraklion, Greece.</div></div>
+            <div class="presentation"><div class="presentation-title">2018. An Open Quantum Systems Approach to the Radical Pair Mechanism. South African Institute of Physics Conference, Bloemfontein, South Africa.</div></div>
+          </div>
+        </div>
+
+        <details>
+          <summary>Research and journal-club presentations</summary>
+          <div class="presentation-list">
+            <div class="presentation"><div class="presentation-title">2024. Entanglement Study in the Posner Cluster. QuEST Journal Club, Istanbul, Türkiye.</div></div>
+            <div class="presentation"><div class="presentation-title">2023. Utilizing Entangled NV Centers in Biological Systems. QuEST Journal Club, Istanbul, Türkiye.</div></div>
+            <div class="presentation"><div class="presentation-title">2022. Chirality-Induced Spin Selectivity. QuEST Journal Club, Istanbul, Türkiye.</div></div>
+            <div class="presentation"><div class="presentation-title">2021. Artificial Neuron and Quantum Brain. QuEST Journal Club, Istanbul, Türkiye.</div></div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="service">
+      <div class="container two-col">
+        <div class="card panel">
+          <div class="section-head"><h2>Teaching, mentoring, and leadership</h2></div>
+          <div class="stack">
+            <div class="item"><strong>Teaching</strong><div class="small">Teaching assistant in advanced quantum mechanics, applied mathematics, advanced electromagnetism, and general physics laboratory.</div></div>
+            <div class="item"><strong>Mentoring</strong><div class="small">Mentor students in experimental design, data analysis, theoretical and experimental workflows, and interdisciplinary project development.</div></div>
+            <div class="item"><strong>Leadership</strong><div class="small">Organizer of the Quantum Vision Journal Club, scientific outreach activities, and the ALIFE 2026 workshop “Quantum Biology and Artificial Life: New Physical Principles for Living Systems.”</div></div>
+          </div>
+        </div>
+
+        <div class="card panel">
+          <div class="section-head"><h2>Professional service and recognition</h2></div>
+          <div class="stack">
+            <div class="item"><strong>Peer review</strong><div class="small">Reviewer for <em>Brain Research</em>, Frontiers journals, and <em>Computational and Structural Biotechnology Journal</em>.</div></div>
+            <div class="item"><strong>Jury roles</strong><div class="small">Abstract and Flash Talk Jury, PATH Symposium 2026, University of Waterloo; jury and judge for Synapse Science.</div></div>
+            <div class="item"><strong>Recognition and support</strong><div class="small">Provost’s Program for Interdisciplinary Postdoctoral Scholars; Northwell Health Certificate of Achievement; ITAMP sponsorship; TÜBİTAK research and conference support.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="broader">
+      <div class="container">
+        <div class="section-head">
+          <h2>Beyond research</h2>
+          <p class="section-intro">Selected activities that reflect my international experience, community involvement, athletics, and creative work.</p>
+        </div>
+        <div class="three-col">
+          <div class="card panel">
+            <h3>Community and outreach</h3>
+            <div class="stack">
+              <div class="item"><strong>Science communication</strong><div class="small">Organized quantum-themed engagement events and science activities for students and the public.</div></div>
+              <div class="item"><strong>Volunteer teaching</strong><div class="small">Taught French to a refugee in Lyon, taught English to children at Hasantar Monastery, and supported learners through tutoring and mentoring.</div></div>
+              <div class="item"><strong>Environmental action</strong><div class="small">Helped organize youth-led cleanup activities in South Africa with local environmental initiatives.</div></div>
+            </div>
+          </div>
+
+          <div class="card panel">
+            <h3>International experience</h3>
+            <div class="stack">
+              <div class="item"><strong>Academic perspective</strong><div class="small">Research, teaching, mentoring, and outreach experience across Canada, France, Türkiye, and South Africa.</div></div>
+              <div class="item"><strong>Travel and organization</strong><div class="small">Led travel and logistics activities across Nepal, New Zealand, Argentina, Chile, Peru, Bolivia, and Tunisia.</div></div>
+              <div class="item"><strong>Early leadership</strong><div class="small">Organized hiking and community activities for students from underrepresented backgrounds.</div></div>
+            </div>
+          </div>
+
+          <div class="card panel">
+            <h3>Athletics and creative work</h3>
+            <div class="stack">
+              <div class="item"><strong>Karate and athletics</strong><div class="small">Second-Dan black belt with national-level competition experience in France, together with ultra-trail running and under-23 competitive placements.</div></div>
+              <div class="item"><strong>Art and design</strong><div class="small">Participated in Science Exposed 2026 and designed the Quantum Neurobiology Lab logo in Inkscape.</div></div>
+              <div class="item"><strong>Digital projects</strong><div class="small">Develop public-facing web tools that connect reflection, science communication, and accessible design.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="media">
+      <div class="container">
+        <div class="section-head"><h2>Media and public links</h2></div>
+        <div class="card panel">
+          <div class="stack">
+            <div class="item">
+              <strong><a href="https://uwaterloo.ca/postdoctoral-scholars/blog/lea-gassab" target="_blank" rel="noreferrer">University of Waterloo profile</a></strong>
+              <div class="small">Postdoctoral scholar profile at the University of Waterloo.</div>
+            </div>
+            <div class="item">
+              <strong><a href="https://www.youtube.com/watch?v=mBG1qmMZ4ck" target="_blank" rel="noreferrer">NITheCS and QSUN seminar</a></strong>
+              <div class="small">Seminar on quantum effects in microtubules, energy flow, information dynamics, and neurodegeneration.</div>
+            </div>
+            <div class="item">
+              <strong><a href="https://www.youtube.com/watch?v=rm0elcdHqyw" target="_blank" rel="noreferrer">QProjects #1: Quantum Vision</a></strong>
+              <div class="small">Research presentation on quantum vision.</div>
+            </div>
+            <div class="item">
+              <strong><a href="https://www.youtube.com/watch?v=lSHlOIWZtH4&amp;list=PLOylAPfMBafmt-Row0EbqbUuneROGaXQR&amp;index=29" target="_blank" rel="noreferrer">Northwell Quantum Biology Forum 2026 flash talk</a></strong>
+              <div class="small">Flash talk on quantum mechanisms behind oxidative damage in neurodegenerative disease.</div>
+            </div>
+            <div class="item">
+              <strong><a href="https://youtu.be/xMgSzKEYM4U?si=uXRrXiTE_7jiycGU" target="_blank" rel="noreferrer">QuEBS 2026 presentation</a></strong>
+              <div class="small">Talk on quantum and molecular approaches to microtubule energy dynamics.</div>
+            </div>
+            <div class="item">
+              <strong><a href="https://www.popularmechanics.com/science/health/a71052210/quantum-consciousness-terahertz-scanners/" target="_blank" rel="noreferrer">Popular Mechanics interview</a></strong>
+              <div class="small">Popular-press feature connected to quantum biology and consciousness.</div>
+            </div>
+            <div class="item">
+              <strong><a href="https://limgassab.github.io/awareness_app/" target="_blank" rel="noreferrer">Public project: Awareness App</a></strong>
+              <div class="small">Interactive public-facing web project.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="card panel">
+          <div class="section-head"><h2>Contact and external profiles</h2></div>
+          <div class="callout">For research discussions, collaborations, speaking invitations, or student inquiries, please contact me by email.</div>
+          <p style="margin-top: 1rem;"><strong>Email:</strong> <a href="mailto:lgassab@uwaterloo.ca">lgassab@uwaterloo.ca</a></p>
+          <p><strong>Research group:</strong> <a href="https://www.quantneuro.ca/team" target="_blank" rel="noreferrer">Quantum Neurobiology Lab</a></p>
+          <div class="link-row">
+            <a class="btn" href="https://scholar.google.com/citations?hl=en&amp;user=MJC4l_MAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+            <a class="btn" href="https://orcid.org/0000-0001-9961-0658" target="_blank" rel="noreferrer">ORCID</a>
+            <a class="btn" href="https://ca.linkedin.com/in/lea-gassab-4276a626a" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Lea Gassab | Quantum biology, molecular biophysics, and interdisciplinary research | Updated July 2026</div>
+  </footer>
+
+  <script>
+    (function () {
+      const buttons = Array.from(document.querySelectorAll('.filter-btn'));
+      const publications = Array.from(document.querySelectorAll('.pub[data-topics]'));
+      const status = document.getElementById('filter-status');
+
+      function applyFilter(filter) {
+        let visible = 0;
+        publications.forEach(function (publication) {
+          const topics = (publication.dataset.topics || '').split(/\s+/);
+          const show = filter === 'all' || topics.includes(filter);
+          publication.classList.toggle('hidden', !show);
+          if (show) visible += 1;
+        });
+
+        buttons.forEach(function (button) {
+          const active = button.dataset.filter === filter;
+          button.classList.toggle('active', active);
+          button.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+
+        if (status) {
+          status.textContent = filter === 'all'
+            ? visible + ' publications shown.'
+            : visible + ' publications shown for this theme.';
+        }
+      }
+
+      buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          applyFilter(button.dataset.filter || 'all');
+        });
+      });
+
+      applyFilter('all');
+    }());
+  </script>
+</body>
+</html>
