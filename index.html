@@ -349,6 +349,12 @@
       border-color: #cde4e7;
     }
 
+    .status.accepted {
+      color: var(--accent-dark);
+      background: var(--accent-soft);
+      border-color: #cde4e7;
+    }
+
     .status.preprint {
       color: var(--gold);
       background: var(--gold-soft);
@@ -559,6 +565,7 @@
         <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
+        <a href="#in-progress">In progress</a>
         <a href="#experience">Experience</a>
         <a href="#presentations">Talks</a>
         <a href="#service">Service</a>
@@ -652,7 +659,7 @@
         <div class="card panel">
           <div class="section-head"><h2>Research profile</h2></div>
           <p>I am an interdisciplinary physicist working at the interface of quantum biology, open quantum systems, quantum information, molecular biophysics, computational modeling, and experimental biophysics. My current research examines quantum-biological processes in neuronal microtubules and their possible relevance to brain function and neurodegenerative disease, with emphasis on excitation dynamics, light-matter interactions, aromatic amino-acid networks, and oxidative modification.</p>
-          <p>My doctoral training was primarily theoretical. During my postdoctoral work, I expanded into spectroscopy, imaging, biochemical methods, and mass spectrometry. This combination allows me to develop mechanistic models, translate them into experimentally testable predictions, and collaborate across physics, biology, computation, and engineering.</p>
+          <p>My doctoral training was primarily theoretical. During my postdoctoral work, I expanded into spectroscopy, imaging, biochemical methods, and mass spectrometry. This combination allows me to develop mechanistic models, translate them into experimentally testable predictions, and collaborate across physics, biology, computation, and engineering. Ongoing projects also examine biological quantum sensing, cytoskeletal nuclear spins, and mechanism-guided brain mapping for photobiomodulation.</p>
           <div class="chips">
             <span class="chip">Quantum biology</span>
             <span class="chip">Quantum neurobiology</span>
@@ -749,7 +756,7 @@
       <div class="container">
         <div class="section-head">
           <h2>Publications</h2>
-          <p class="section-intro">Peer-reviewed articles, preprints, manuscripts under revision, and peer-reviewed conference proceedings. Use the filters to view work by subject.</p>
+          <p class="section-intro">Journal articles, accepted papers, preprints, conference contributions, and research software are listed separately. The three current manuscripts appear in Research in Progress. Use the filters to view work by subject.</p>
         </div>
 
         <div class="filter-row" role="group" aria-label="Filter publications by research subject">
@@ -763,8 +770,18 @@
         </div>
 
         <div class="publication-group card panel">
-          <h3>Peer-reviewed journal articles</h3>
+          <h3>Peer-reviewed and accepted journal articles</h3>
           <div class="publication-list">
+            <article class="pub" data-topics="interface sensing coherence microtubules cognition">
+              <div class="pub-top">
+                <span class="status accepted">Accepted, 2026</span>
+                <div class="chips"><span class="tag">Quantum biology</span><span class="tag">Evidence map</span></div>
+              </div>
+              <div class="pub-title"><strong>Gassab, L.</strong>, Adams, B., Goolam Hossen, Y. H., Hassasfar, A., Pusuluk, O., Murugan, N. J., Kominis, I. K., Müstecaplıoğlu, Ö. E., Petruccione, F., and Craddock, T. J. A. Quantum in Biology, Quantum for Biology, and Biology for Quantum: Mapping the Evidence and the Road Ahead.</div>
+              <div class="pub-meta"><em>Advances in Physics: X</em>. Accepted for publication (2026).</div>
+              <div class="pub-links"><a class="doi-link" href="https://doi.org/10.1080/23746149.2026.2753868" target="_blank" rel="noreferrer">DOI 10.1080/23746149.2026.2753868</a><a class="doi-link" href="https://arxiv.org/abs/2605.00205" target="_blank" rel="noreferrer">arXiv preprint</a></div>
+            </article>
+
             <article class="pub" data-topics="microtubules interface">
               <div class="pub-top">
                 <span class="status published">Published, 2026</span>
@@ -848,8 +865,17 @@
         </div>
 
         <div class="publication-group card panel">
-          <h3>Preprints and manuscripts under revision</h3>
+          <h3>Preprints</h3>
           <div class="publication-list">
+            <article class="pub" data-topics="microtubules interface">
+              <div class="pub-top">
+                <span class="status preprint">Preprint, 2026</span>
+                <div class="chips"><span class="tag">Microtubules</span><span class="tag">Pharmacokinetics</span></div>
+              </div>
+              <div class="pub-title">Colbourne, M. T., <strong>Gassab, L.</strong>, et al. In Silico and In Vitro Methods for Pharmacokinetic Analysis of Substituted Tryptamines as Microtubule Targeting Agents.</div>
+              <div class="pub-meta">Research Square preprint (2026).</div>
+            </article>
+
             <article class="pub" data-topics="memory cognition">
               <div class="pub-top">
                 <span class="status preprint">Preprint, 2026</span>
@@ -860,31 +886,31 @@
               <div class="pub-links"><a class="doi-link" href="https://doi.org/10.48550/arXiv.2606.12449" target="_blank" rel="noreferrer">arXiv 2606.12449</a></div>
             </article>
 
-            <article class="pub" data-topics="interface microtubules sensing coherence cognition">
-              <div class="pub-top">
-                <span class="status preprint">Preprint, 2026</span>
-                <div class="chips"><span class="tag">Quantum biology</span><span class="tag">Evidence map</span></div>
-              </div>
-              <div class="pub-title"><strong>Gassab, L.</strong>, Adams, B., Goolam Hossen, Y. H., Pusuluk, O., Kominis, I. K., Müstecaplıoğlu, Ö. E., Petruccione, F., and Craddock, T. J. A. Quantum in Biology, Quantum for Biology, and Biology for Quantum: Mapping the Evidence and the Road Ahead.</div>
-              <div class="pub-meta">arXiv:2605.00205.</div>
-              <div class="pub-links"><a class="doi-link" href="https://doi.org/10.48550/arXiv.2605.00205" target="_blank" rel="noreferrer">arXiv 2605.00205</a></div>
-            </article>
-
             <article class="pub" data-topics="microtubules interface">
               <div class="pub-top">
-                <span class="status preprint">Under revision, 2026</span>
+                <span class="status preprint">Preprint, 2026</span>
                 <div class="chips"><span class="tag">Microtubules</span><span class="tag">UV spectroscopy</span></div>
               </div>
               <div class="pub-title"><strong>Gassab, L.</strong>, and Craddock, T. J. A. Engineering Quantum Optical Responses of Microtubules through Tryptophan-Network Simulations and Ultraviolet Spectroscopy.</div>
-              <div class="pub-meta">arXiv:2604.18604. Manuscript under revision at <em>Science Advances</em>.</div>
+              <div class="pub-meta">arXiv:2604.18604.</div>
               <div class="pub-links"><a class="doi-link" href="https://doi.org/10.48550/arXiv.2604.18604" target="_blank" rel="noreferrer">arXiv 2604.18604</a></div>
             </article>
           </div>
         </div>
 
         <div class="publication-group card panel">
-          <h3>Peer-reviewed conference proceedings</h3>
+          <h3>Conference proceedings and contributions</h3>
           <div class="publication-list">
+            <article class="pub" data-topics="interface coherence cognition">
+              <div class="pub-top">
+                <span class="status proceeding">Conference contribution, 2026</span>
+                <div class="chips"><span class="tag">Artificial life</span><span class="tag">Quantum biology</span></div>
+              </div>
+              <div class="pub-title">Goolam Hossen, Y. H., <strong>Gassab, L.</strong>, et al. Can Life Exist “Inside” an Atom?</div>
+              <div class="pub-meta">Artificial Life Conference (ALIFE 2026), conference contribution.</div>
+              <div class="pub-links"><a class="doi-link" href="https://doi.org/10.1162/isal.a.978" target="_blank" rel="noreferrer">DOI 10.1162/isal.a.978</a></div>
+            </article>
+
             <article class="pub" data-topics="microtubules interface coherence">
               <div class="pub-top">
                 <span class="status proceeding">Proceeding, 2026</span>
@@ -907,7 +933,62 @@
           </div>
         </div>
 
+
+        <div class="publication-group card panel">
+          <h3>Research software and reproducibility resources</h3>
+          <div class="publication-list">
+            <article class="pub" data-topics="memory interface">
+              <div class="pub-top">
+                <span class="status proceeding">Research software, 2026</span>
+                <div class="chips"><span class="tag">Reproducibility</span><span class="tag">Network modeling</span></div>
+              </div>
+              <div class="pub-title">Goolam Hossen, Y. H., <strong>Gassab, L.</strong>, et al. Biological Network Model Selection: Multilayer Shortest-Path Reproducibility Code.</div>
+              <div class="pub-meta">Zenodo (2026). Research software record.</div>
+            </article>
+          </div>
+        </div>
+
         <p id="filter-status" class="small" aria-live="polite"></p>
+      </div>
+    </section>
+
+
+    <section id="in-progress">
+      <div class="container">
+        <div class="section-head">
+          <h2>Research in Progress</h2>
+          <p class="section-intro">Current manuscripts and submissions, listed separately from published research and public preprints.</p>
+        </div>
+        <div class="publication-group card panel">
+          <div class="publication-list">
+            <article class="pub" data-topics="sensing interface">
+              <div class="pub-top">
+                <span class="status preprint">Manuscript in preparation, 2026</span>
+                <div class="chips"><span class="tag">Quantum sensing</span><span class="tag">Biological inference</span></div>
+              </div>
+              <div class="pub-title">Quantum Sensing for Biology: From Physical Sensitivity to Biological Inference</div>
+              <div class="pub-meta">Manuscript prepared for <em>PRX Life</em>.</div>
+            </article>
+
+            <article class="pub" data-topics="microtubules coherence interface">
+              <div class="pub-top">
+                <span class="status proceeding">Submitted, 2026</span>
+                <div class="chips"><span class="tag">Cytoskeleton</span><span class="tag">Nuclear spins</span></div>
+              </div>
+              <div class="pub-title">Spin-Based Quantum Information Processing in Cytoskeletal Filaments Using Nucleoside Phosphates</div>
+              <div class="pub-meta">Submitted to <em>Scientific Reports</em>.</div>
+            </article>
+
+            <article class="pub" data-topics="cognition interface">
+              <div class="pub-top">
+                <span class="status preprint">Manuscript in final revision, 2026</span>
+                <div class="chips"><span class="tag">Brain mapping</span><span class="tag">Photobiomodulation</span></div>
+              </div>
+              <div class="pub-title">A Proof-of-Concept Human Brain Mapping Tool for Mechanism-Guided Photobiomodulation Hypothesis Generation</div>
+              <div class="pub-meta">Manuscript in final revision.</div>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -959,8 +1040,10 @@
         </div>
 
         <div class="presentation-group card panel">
-          <h3>Invited and keynote presentations</h3>
+          <h3>Plenary, keynote, and invited presentations</h3>
           <div class="presentation-list">
+            <div class="presentation"><div class="presentation-title">2026. <a href="https://tsc2026.org/abstracts_html/lea-gassab.html" target="_blank" rel="noreferrer">Quantum Biophotonics of Microtubules: Light, Energy, and Neural Function</a>. The Science of Consciousness (TSC 2026), San Diego, USA. <strong>Plenary speaker</strong>, Monday, October 12, session PL-1.</div></div>
+            <div class="presentation"><div class="presentation-title">2026. <a href="https://tsc2026.org/workshops.html" target="_blank" rel="noreferrer">Microtubules as Quantum-Optical Systems in Biology</a>. The Science of Consciousness (TSC 2026), San Diego, USA. <strong>Workshop speaker</strong>, Sunday, October 11, Quantum Biology and the Brain.</div></div>
             <div class="presentation"><div class="presentation-title">2026. Quantum Effects in Microtubules: Energy Flow, Information Dynamics, and Relevance to Neurodegeneration. NITheCS Seminar, online, South Africa. Invited seminar.</div></div>
             <div class="presentation"><div class="presentation-title">2026. Quantum Optical Effects in Neuronal Microtubules: Super-Radiance under Structural Disorder. SPIE Conference, San Francisco, United States. Invited talk.</div></div>
             <div class="presentation"><div class="presentation-title">2025. Quantum Information Protection in the Posner Model of Cognition. Classical and Quantum Processes in the Brain: From Molecules to the Psyche, Messina, Italy. Invited keynote talk.</div></div>
@@ -1010,15 +1093,16 @@
           <div class="section-head"><h2>Teaching, mentoring, and leadership</h2></div>
           <div class="stack">
             <div class="item"><strong>Teaching</strong><div class="small">Teaching assistant in advanced quantum mechanics, applied mathematics, advanced electromagnetism, and general physics laboratory.</div></div>
-            <div class="item"><strong>Mentoring</strong><div class="small">Mentor students in experimental design, data analysis, theoretical and experimental workflows, and interdisciplinary project development.</div></div>
-            <div class="item"><strong>Leadership</strong><div class="small">Organizer of the Quantum Vision Journal Club, scientific outreach activities, and the ALIFE 2026 workshop “Quantum Biology and Artificial Life: New Physical Principles for Living Systems.”</div></div>
+            <div class="item"><strong>Mentoring</strong><div class="small">Mentor students in experimental design, data analysis, quantum and molecular biophysics, computational simulations, spectroscopy, and interdisciplinary project development.</div></div>
+            <div class="item"><strong>Leadership</strong><div class="small">Organizer of the Quantum Vision Journal Club and scientific outreach activities; organizing committee member for the ALIFE 2026 workshop “Quantum Biology and Artificial Life: New Physical Principles for Living Systems.”</div></div>
           </div>
         </div>
 
         <div class="card panel">
           <div class="section-head"><h2>Professional service and recognition</h2></div>
           <div class="stack">
-            <div class="item"><strong>Peer review</strong><div class="small">Reviewer for <em>Brain Research</em>, Frontiers journals, and <em>Computational and Structural Biotechnology Journal</em>.</div></div>
+            <div class="item"><strong>Peer review</strong><div class="small">Reviewer for <em>Frontiers in Systems Neuroscience</em>, MDPI journals, <em>Brain Research</em>, and <em>Computational and Structural Biotechnology Journal</em>. <a href="https://doi.org/10.3389/fnsys.2026.1724421" target="_blank" rel="noreferrer">Example of publicly acknowledged Frontiers reviewing</a>.</div></div>
+            <div class="item"><strong>External dissertation committee</strong><div class="small">External PhD Dissertation Committee Member, Transpersonal Psychology, California Institute of Integral Studies (CIIS), for doctoral candidate Tiffany Cornelis.</div></div>
             <div class="item"><strong>Jury roles</strong><div class="small">Abstract and Flash Talk Jury, PATH Symposium 2026, University of Waterloo; jury and judge for Synapse Science.</div></div>
             <div class="item"><strong>Recognition and support</strong><div class="small">Provost’s Program for Interdisciplinary Postdoctoral Scholars; Northwell Health Certificate of Achievement; ITAMP sponsorship; TÜBİTAK research and conference support.</div></div>
           </div>
@@ -1119,7 +1203,7 @@
   </main>
 
   <footer>
-    <div class="container">Lea Gassab | Quantum biology, molecular biophysics, and interdisciplinary research | Updated July 2026</div>
+    <div class="container">Lea Gassab | Quantum biology, molecular biophysics, and interdisciplinary research | Updated November 2026</div>
   </footer>
 
   <script>
